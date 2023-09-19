@@ -91,12 +91,11 @@ https://taskfile.dev/installation/
 ## Comandi utili di taskfile
 
 di seguito alcuni comandi utili (descrizione riportata in lingua inglese)
-
-| Nome Comando                                                                  | Descrizione                                               |
-| ----------------------------------------------------------------------------- | --------------------------------------------------------- | ------------ | -------------------------------------------------- |
-| `task init`                                                                   | Initialize python dev environment                         |
-| `task sync-services`                                                          | Update all submodule repos with remote                    |
-| `task services-switch-branch -- [master                                       | develop                                                   | branchname]` | Switch to the specified branch all submodule repos |
-| `task update-graph`                                                           | Update the architecture image based on current CDK script |
-| `task run-unit-tests`                                                         | Update all services and run only unit tests               |
-| `task run-integration-tests` or `task run-integration-tests -- [aws-profile]` | Update all services and run only integration tests        |
+| Nome Comando                                                   | Descrizione                                         |
+| --------------------------------------------------------------| ----------------------------------------------------|
+| `task init`                                                    | Initialize python dev environment                   |
+| `task sync-services`                                           | Update all submodule repos with remote              |
+| `task services-switch-branch -- [master|develop|branchname]`  | Switch to the specified branch all submodule repos  |
+| `task update-graph`                                            | Update the architecture image based on current CDK script |
+| `task run-unit-tests`                                          | Update all services and run only unit tests         |
+| `task run-integration-tests` or `task run-integration-tests -- [aws-profile]` | Update all services and run only integration tests  |
