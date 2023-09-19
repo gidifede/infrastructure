@@ -1,92 +1,102 @@
+# Infrastructure Repository - Documentazione
 
-# Infrastructure
+## Panoramica
 
-This project will contain the CDK code to deploy the infrastructure for the logistic backbone.
-The documentation of this project will be focused around CDK details and choices
+La soluzione "Logistic-backbone" è un framework di gestione eventi basato sull'architettura event-sourcing focalizzato sulla logistica. Informazioni architetturali di dettaglio sono reperibili qui [inserire link]. La presente documentazione è rivolta alla descrizione degli aspetti implementativi e non architetturalie nonchè alla comprensione della struttura del seguente repo ed alle scelte di dettaglio.
+Il presente repo è progettato per il deployment su AWS di un ambiente robusto e scalabile che possa gestire vari aspetti come la configurazione, la logica di business, l'interfaccia API e i test.
 
+### Scopo
 
-# Taskfile commands
+L'obiettivo è automatizzare e semplificare il processo di deploy e gestione di servizi cloud, consentendo una rapida iterazione e scalabilità. La soluzione copre:
 
-To install Taskfile:
+- Definizione di schemi e configurazioni
+- Gestione di servizi attraverso handler di comandi e query
+- Documentazione e test
+
+## Architettura del repo
+
+### Configuration
+
+- **Ruolo**: Definire schemi e configurazioni in formato JSON.
+- **Tecnologie**: JSON Schema
+
+### Infrastructure
+
+- **Ruolo**: Contiene il codice per il deploy delle risorse cloud.
+- **Tecnologie**: AWS CDK, Python
+- **Interazione**: Fa il deploy dei servizi definiti nella directory `services`.
+
+### Services
+
+- **Ruolo**: Contiene la logica di business e il codice sorgente per vari servizi.
+- **Tecnologie**: Linguaggio di programmazione specifico al servizio (es. Python, Go)
+- **Interazione**: Viene deployato attraverso il codice nella directory `infrastructure`.
+
+### Docs
+
+- **Ruolo**: Fornire la documentazione del progetto.
+- **Tecnologie**: Markdown, altri formati di documentazione
+
+### Swagger
+
+- **Ruolo**: Documentazione delle API.
+- **Tecnologie**: Swagger
+
+### Tests
+
+- **Ruolo**: Contiene test unitari e funzionali.
+- **Tecnologie**: Framework di test specifici al linguaggio (es. pytest per Python)
+
+## Flusso di Lavoro
+
+1. **Definizione della Configurazione**: Gli schemi e le configurazioni vengono definiti nella directory `configuration`.
+2. **Sviluppo del Servizio**: La logica di business e il codice sorgente vengono sviluppati nella directory `services`.
+3. **Deploy**: Il codice nella directory `infrastructure` fa il deploy delle risorse cloud e dei servizi.
+4. **Documentazione e Test**: La documentazione è mantenuta aggiornata e i test vengono eseguiti per garantire la qualità del codice.
+
+## Esempio di Deploy con CDK
+
+```python
+from aws_cdk import (
+    aws_lambda as _lambda,
+    aws_apigateway as apigw,
+    core
+)
+
+class MyStack(core.Stack):
+
+    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
+        super().__init__(scope, id, **kwargs)
+
+        # Definizione della funzione Lambda
+        my_lambda = _lambda.Function(
+            self, 'MyLambda',
+            runtime=_lambda.Runtime.PYTHON_3_8,
+            handler='my_lambda.handler',
+            code=_lambda.Code.from_asset('services/my_service')
+        )
+
+        # API Gateway
+        apigw.LambdaRestApi(
+            self, 'MyApi',
+            handler=my_lambda,
+        )
+```
+
+# Get started
+
+Si suggerisce l'utilizzo di Taskfile:
 https://taskfile.dev/installation/
 
-`task init`
-Initialize python dev environment
+## Comandi utili di taskfile
 
-`task sync-services`
-Update all submodule repos with remote
+di seguito alcuni comandi utili (descrizione riportata in lingua inglese)
 
-`task services-switch-branch -- [master|develop|branchname]`
-Switch to the specified branch all submodule repos
-
-`task update-graph`
-Update the architecture image based on current CDK script
-
-`task run-unit-tests`
-Update all services and run only unit tests
-
-`task run-integration-tests` or `task run-integration-tests -- [aws-profile]`
-Update all services and run only integration tests
-
-# Welcome to your CDK Python project!
-
-This is a blank project for CDK development with Python.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
-
-To manually create a virtualenv on MacOS and Linux:
-
-```
-$ python3 -m venv .venv
-```
-
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
-
-```
-$ source .venv/bin/activate
-```
-
-If you are a Windows platform, you would activate the virtualenv like this:
-
-```
-% .venv\Scripts\activate.bat
-```
-
-Once the virtualenv is activated, you can install the required dependencies.
-
-```
-$ pip install -r requirements.txt
-```
-
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
-```
-
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
-
-## Constructs
-
-![Constructs](docs/constructs.png)
-[ArchitetturaCDK.drawio](docs/ArchitetturaCDK.drawio)
-
-## Useful commands
-
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
-
-Enjoy!
+| Nome Comando                                                                  | Descrizione                                               |
+| ----------------------------------------------------------------------------- | --------------------------------------------------------- | ------------ | -------------------------------------------------- |
+| `task init`                                                                   | Initialize python dev environment                         |
+| `task sync-services`                                                          | Update all submodule repos with remote                    |
+| `task services-switch-branch -- [master                                       | develop                                                   | branchname]` | Switch to the specified branch all submodule repos |
+| `task update-graph`                                                           | Update the architecture image based on current CDK script |
+| `task run-unit-tests`                                                         | Update all services and run only unit tests               |
+| `task run-integration-tests` or `task run-integration-tests -- [aws-profile]` | Update all services and run only integration tests        |
