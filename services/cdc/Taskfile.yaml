@@ -1,0 +1,34 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  APP_NAME: CDC
+  LAMBDA_NAME: LogisticBackbone-CommandHandler
+  LAMBDA_HANDLER: CDC
+  ZIP_NAME: CDC.zip
+  ARN_ROLE: arn:aws:iam::810417419632:role/Maintainer
+  REGION: eu-central-1
+  PROFILE: aws-poste
+  VERSION: 1.0.0
+
+
+tasks:
+  build:
+    cmds:
+      - GOOS=linux GOARCH=amd64 go build -o "{{.APP_NAME}}" ./cmd/main.go
+  zip-linux:
+    cmds:
+      - zip -o "{{.ZIP_NAME}}" "{{.APP_NAME}}"
+  zip-win:
+    cmds:
+      - build-lambda-zip -o "{{.ZIP_NAME}}" "{{.APP_NAME}}"
+  create-deploy:
+    cmds:
+      - aws lambda create-function --function-name "{{.LAMBDA_NAME}}" --region "{{.REGION}}" --runtime go1.x --role "{{.ARN_ROLE}}" --handler "{{.LAMBDA_HANDLER}}" --zip-file fileb://"{{.ZIP_NAME}}"
+  update-deploy:
+    cmds:
+      - aws lambda update-function-code --function-name "{{.LAMBDA_NAME}}" --zip-file fileb://"{{.ZIP_NAME}}" --profile "{{.PROFILE}}"
+  # update-version:
+  #   cmds:
+  #     - aws lambda publish-version --function-name "{{.LAMBDA_NAME}}"

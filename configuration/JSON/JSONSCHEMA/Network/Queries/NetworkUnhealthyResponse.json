@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "node": {
+                "type": "object",
+                "properties": {
+                    "node_id": {
+                        "type": "string"
+                    },
+                    "node_type": {
+                        "type": "string"
+                    },
+                    "node_company": {
+                        "type": "string"
+                    },
+                    "node_location": {
+                        "$ref": "https://example.com/schemas/common#/Definitions/address"
+                    },
+                    "coordinates": {
+                        "type": "object",
+                        "properties": {
+                            "lat": {
+                                "type": "number"
+                            },
+                            "long": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                }
+            },
+            "timestamp": {
+                "type": "string",
+                "format": "date-time"
+            }
+        }
+    }
+}

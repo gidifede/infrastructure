@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+    "properties": {
+        "sorting_machine_id": {
+            "type":"string"
+        },
+        "parcel_list":{
+            "type":"array",
+            "items":{
+                "type":"object",
+                "properties": {
+                    "parcel_id": {
+                        "type": "string"
+                    },
+                    "departure_time": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "estimated_arrived_time":{
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "next_hop":{
+                        "type": "string"
+                    },
+                    "destination":{
+                        "type": "string"
+                    },
+                    "target":{
+                        "type": "string"
+                    },
+                    "source":{
+                        "type": "string"
+                    },
+                    "estimated_delivery_time":{
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "hub_time":{
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            }
+        }
+    }
+
+}

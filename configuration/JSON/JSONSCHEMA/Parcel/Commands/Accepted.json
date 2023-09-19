@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "parcel": {
+      "$ref": "https://example.com/schemas/common#/Definitions/parcel"
+    },
+    "facility_id":{
+      "type":"string"
+    },
+    "sender": {
+      "$ref": "https://example.com/schemas/common#/Definitions/sender"
+    },
+    "receiver": {
+      "$ref": "https://example.com/schemas/common#/Definitions/receiver"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "parcel",
+    "facility_id",
+    "sender",
+    "receiver",
+    "timestamp"
+  ]
+}

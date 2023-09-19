@@ -1,0 +1,45 @@
+{
+    "states": [
+        "InitialState",
+        "Filling",
+        "NetworkTransit",
+        "Arrived"
+    ],
+    "actions": [
+        "AddProductToTransport",
+        "StartTransport",
+        "EndTransport"
+    ],
+    "transitions": [
+        [
+            "Filling",
+            "None",
+            "None"
+        ],
+        [
+            "Filling",
+            "NetworkTransit",
+            "None"
+        ],
+        [
+            "None",
+            "None",
+            "Arrived"
+        ],
+        [
+            "None",
+            "None",
+            "None"
+        ]
+    ],
+    "events": [
+        "ProductAddedToTransport",
+        "TransportStarted",
+        "TransportEnded"
+    ],
+    "eventStateRelation": [
+        "Filling",
+        "NetworkTransit",
+        "Arrived"
+    ]
+}

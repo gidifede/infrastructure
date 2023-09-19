@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "vehicle_licence_plate": {
+                "type": "string"
+            },
+            "status": {
+                "type": "string"
+            },
+            "arrived_time": {
+                "type": "string",
+                "format": "date-time"
+            },
+            "next_start_time": {
+                "type": "string",
+                "format": "date-time"
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "parcel_in_sla": {
+            "type": "integer"
+        },
+        "parcel_out_sla": {
+            "type": "integer"
+        }
+    }
+}

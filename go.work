@@ -1,0 +1,23 @@
+go 1.19
+
+use (
+	./services/cdc
+	./services/commandhandler
+	./services/confighandler
+	./services/commandvalidator
+	./services/projections/simulation_time_projection
+	./services/projections/facility_parcel_projection
+	./services/projections/facility_vehicle_projection
+	./services/projections/fleet_processing_projection
+	./services/projections/facility_parcel_expected_projection
+	./services/projections/facility_sorting_machine_projection
+	./services/projections/parcel_processing_projection
+	./services/projections/parcel_sla_projection
+	./services/queryhandlers/network
+	./services/queryhandlers/facility
+	./services/queryhandlers/fleet
+	./services/queryhandlers/parcel
+	./services/queryhandlers/time
+	./services/queryhandlers/logistic
+
+)

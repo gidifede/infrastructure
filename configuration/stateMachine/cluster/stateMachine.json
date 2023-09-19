@@ -1,0 +1,44 @@
+{
+    "states": [
+        "InitialState",
+        "ReadyToFilling",
+        "Filling",
+        "FilledAndCLose",
+        "NetworkTransit",
+        "Arrived",
+        "Empty"
+    ],
+    "actions": [
+        "Create",
+        "AddProduct",
+        "Close",
+        "StartTransport",
+        "EndTransport",
+        "Open"
+    ],
+    "transitions": [
+		["ReadyToFilling", "None", "None", "None", "None", "None"],
+        ["None", "Filling", "None", "None", "None", "None"],
+        ["None", "None", "FilledAndCLose", "None","None", "None"],
+        ["None", "None", "None", "NetworkTransit", "None", "None"],
+        ["None", "None", "None", "None", "Arrived", "None"],
+        ["None", "None", "None", "None", "None", "Empty"],
+        ["None", "None", "None", "None", "None", "None"]
+    ],
+    "events": [
+        "Created",
+        "ProductAdded",
+        "Closed",
+        "TransportStarted",
+        "TransportEnded",
+        "Opened"
+    ],
+    "eventStateRelation": [
+        "ReadyToFilling",
+        "Filling",
+        "FilledAndCLose",
+        "NetworkTransit",
+        "Arrived",
+        "Empty"
+    ]
+}

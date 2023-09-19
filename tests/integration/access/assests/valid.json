@@ -1,0 +1,47 @@
+{
+   "specversion": "1.0",
+   "type": "Logistic.PCL.Product.Accept.Accept",
+   "source": "Logistic.PCL.UP.OMP",
+   "subject": "Command",
+   "id": "CaaAa2-12334-35107A",
+   "time": "2023-02-25T21:15:05.232Z",
+   "datacontenttype": "application/json",
+   "data": {
+       "product": {
+           "name": "Poste Delivery Web",
+           "id": "sscxess",
+           "type": "BOX",
+           "attributes": []
+       },
+       "location": {
+           "type": "UP",
+           "address": "Viale Europa 190",
+           "zipcode": "00144",
+           "city": "Roma",
+           "nation": "Italia",
+           "locationCode": "55Y90",
+           "attributes": []
+       },
+       "sender": {
+           "name": "Pippo Franco",
+           "province": "RM",
+           "city": "Roma",
+           "address": "Via Nepal 51",
+           "zipcode": "00144",
+           "attributes": []
+       },
+       "receiver": {
+           "name": "Paolo Bonolis",
+           "province": "RM",
+           "city": "Roma",
+           "address": "Via della Camilluccia 649",
+           "cap": "00135",
+           "number": "3333456987",
+           "email": "paolo.bonolis@gmail.com",
+           "note": "Consegna presso portiere",
+           "attributes": []
+       },
+       "timestamp": "2018-11-13T20:20:39+00:00",
+       "attributes": []
+   }
+}

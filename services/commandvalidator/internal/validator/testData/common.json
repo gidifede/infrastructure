@@ -1,0 +1,167 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://example.com/schemas/common",
+    "Definitions": {
+        "product": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "BOX",
+                        "PHARMA"
+                    ]
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "name",
+                "id",
+                "type",
+                "attributes"
+            ]
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "zipcode": {
+                    "type": "string",
+                    "pattern": "^[0-9]{5}$"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "nation": {
+                    "type": "string"
+                },
+                "locationCode": {
+                    "type": "string"
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "type",
+                "address",
+                "zipcode",
+                "city",
+                "nation",
+                "locationCode",
+                "attributes"
+            ]
+        },
+        "sender": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "province": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "zipcode": {
+                    "type": "string",
+                    "pattern": "^[0-9]{5}$"
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {}
+                }
+            },
+            "required": [
+                "name",
+                "province",
+                "city",
+                "address",
+                "zipcode",
+                "attributes"
+            ]
+        },
+        "receiver": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "province": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "zipcode": {
+                    "type": "string",
+                    "pattern": "^[0-9]{5}$"
+                },
+                "number": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "note": {
+                    "type": "string"
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {}
+                }
+            }
+        },
+        "address": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "zipcode": {
+                    "type": "string",
+                    "pattern": "^[0-9]{5}$"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "nation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "address",
+                "zipcode",
+                "city",
+                "nation"
+            ]
+        }
+    }
+}

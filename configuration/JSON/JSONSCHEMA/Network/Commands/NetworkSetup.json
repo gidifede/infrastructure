@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "node": {
+                "type": "object",
+                "properties": {
+                    "node_id": {
+                        "type": "string"
+                    },
+                    "node_type": {
+                        "type": "string"
+                    },
+                    "node_company": {
+                        "type": "string"
+                    },
+                    "node_location": {
+                        "$ref": "https://example.com/schemas/common#/Definitions/address"
+                    },
+                    "coordinates": {
+                        "type": "object",
+                        "properties": {
+                            "lat": {
+                                "type": "number"
+                            },
+                            "long": {
+                                "type": "number"
+                            }
+                        }
+                    }
+                }
+            },
+            "connect_to": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "node_Id": {
+                            "type": "string"
+                        },
+                        "distance": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "sorting_machines": {
+                "type": "array",
+                "items": {
+                    "$ref": "https://example.com/schemas/common#/Definitions/sorting_machine"
+                }
+            },
+            "timestamp": {
+                "type": "string",
+                "format": "date-time"
+            }
+        }
+    }
+}

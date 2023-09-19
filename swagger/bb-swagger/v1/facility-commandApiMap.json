@@ -1,0 +1,5 @@
+{
+  "start_processing": "StartProcessing",
+  "end_processing": "EndProcessing",
+  "fail_processing": "FailProcessing"
+}

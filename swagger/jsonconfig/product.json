@@ -1,0 +1,45 @@
+{
+    "config": {
+        "title": "Swagger Logistic backbone Api",
+        "description": "",
+        "version": "1.0.0",
+        "json_schema_refs": [
+            "../configuration/JSON/JSONSCHEMA/common.json"
+        ]
+    },
+    "apis": {
+        "product": [
+            {
+                "name": "Setup_the_logistic_product",
+                "description": "Api for add product that logistic can manage",
+                "path": "/v1/product/setup",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/ProductSetup.json",
+                "parameters": [],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            }
+        ]
+    }
+}

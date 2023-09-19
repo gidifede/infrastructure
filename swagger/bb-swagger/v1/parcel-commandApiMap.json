@@ -1,0 +1,8 @@
+{
+  "accept": "Accept",
+  "fail_delivery": "FailDelivery",
+  "make_ready_to_be_delivered": "MakeReadyToBeDelivered",
+  "start_delivery": "CompleteDelivery",
+  "make_waiting_to_be_withdrawn": "MakeWaitingToBeWithdrawn",
+  "withdraw": "Withdraw"
+}

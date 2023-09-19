@@ -1,0 +1,78 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  init:
+    cmds:
+      - |
+        python3 -m venv .venv
+        source .venv/bin/activate
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
+        git submodule init
+    silent: true
+  update-graph:
+    cmds:
+      - |
+        echo Generating diagram based on latest synth...
+        cdk-dia --target-path docs/infra.png
+    silent: true
+  run-unit-tests:
+    cmds:
+      - |
+        export PYTHONPATH=.
+        pytest --cov=infrastructure/constructs/ --cov=swagger/ --cov-report=html -s -m "not integration and not functional" -c config=test tests/
+    silent: true
+  run-go-unit-tests:
+    cmds:
+      - |
+        go test commandvalidator/...
+        go test command-handler/...
+        go test cdc/...
+        go test queryhandler/...
+        go test projection-product/...
+        go test projection-cluster/...
+    silent: true
+  run-integration-tests:
+    cmds:
+      - |
+        export PYTHONPATH=.
+        pytest -s --profile {{.CLI_ARGS}} tests/integration
+    silent: false
+
+  run-functional-tests:
+    cmds:
+      - |
+        export PYTHONPATH=.
+        pytest -v --html=pytest_report.html tests/functionals
+    silent: false
+
+  swagger:
+    cmds:
+      - |
+        export PYTHONPATH=.
+        python3 swagger/generate.py
+    silent: false
+  swagger-mock:
+    cmds:
+      - |
+        export PYTHONPATH=.
+        python3 swagger/mock_data.py
+    silent: false
+  clean-python-cache:
+    cmds:
+      - |
+        python3 -Bc "import pathlib; [p.unlink() for p in pathlib.Path('.').rglob('*.py[co]')]"
+        python3 -Bc "import pathlib; [p.rmdir() for p in pathlib.Path('.').rglob('__pycache__')]"
+  notify-outputs:
+    cmds:
+      - |
+        out1=$(aws cloudformation describe-stacks --stack-name LogisticBackboneStack --query 'Stacks[0].Outputs[0].OutputValue')
+        out2=$(aws cloudformation describe-stacks --stack-name LogisticBackboneStack --query 'Stacks[0].Outputs[1].OutputValue')
+        curl -X POST -H "Content-Type: application/json" -d "{\"text\":$out1}" https://posteitaliane.webhook.office.com/webhookb2/e11a1279-4650-4ba4-bd06-01e591b9a1ad@761de76f-3d5c-4174-917c-5ad4d06360cb/IncomingWebhook/be394fd82cc74651b7964d28afd72e90/7771d7f9-4ae3-444e-a32a-ebeffe071383
+        curl -X POST -H "Content-Type: application/json" -d "{\"text\":$out2}" https://posteitaliane.webhook.office.com/webhookb2/e11a1279-4650-4ba4-bd06-01e591b9a1ad@761de76f-3d5c-4174-917c-5ad4d06360cb/IncomingWebhook/be394fd82cc74651b7964d28afd72e90/7771d7f9-4ae3-444e-a32a-ebeffe071383
+  run-megalinter:
+    cmds:
+      - |
+        docker run -e DEFAULT_WORKSPACE=/app -e MEGALINTER_CONFIG=.mega_linter.yml -it -v $PWD:/app --entrypoint ./entrypoint.sh oxsecurity/megalinter

@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"product": {
+			"type": "object",
+			"properties": {
+				"name":{
+					"type": "string"
+				},
+				"SLA":{
+					"type":"integer"
+				}
+			}
+        },
+		"timestamp": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"required": [
+		"location",
+        "connectTo",
+		"timestamp"
+	]
+}

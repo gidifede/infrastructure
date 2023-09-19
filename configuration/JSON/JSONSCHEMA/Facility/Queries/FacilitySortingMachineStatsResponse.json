@@ -1,0 +1,33 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "capacity": {
+            "type": "number"
+        },
+        "parcel_processed": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "day": {
+                        "type": "string"
+                    },
+                    "hour": {
+                        "type": "string"
+                    },
+                    "parcels": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "working_capacity_average": {
+            "type": "number"
+        },
+        "next_maintenance": {
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+}

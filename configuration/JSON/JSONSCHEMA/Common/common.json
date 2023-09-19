@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://example.com/schemas/common",
+  "Definitions": {
+    "parcel": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "id"
+      ]
+    },
+    "product": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "SLA": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "SLA"
+      ]
+    },
+    "sender": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string",
+          "pattern": "^[0-9]{5}$"
+        },
+        "city": {
+          "type": "string"
+        },
+        "nation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "address",
+        "zipcode",
+        "city",
+        "nation"
+      ]
+    },
+    "receiver": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string",
+          "pattern": "^[0-9]{5}$"
+        },
+        "city": {
+          "type": "string"
+        },
+        "nation": {
+          "type": "string"
+        },
+        "number": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        }
+      },
+      "required": [
+        "name",
+        "address",
+        "zipcode",
+        "city",
+        "nation",
+        "number",
+        "email"
+      ]
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "zipcode": {
+          "type": "string",
+          "pattern": "^[0-9]{5}$"
+        },
+        "city": {
+          "type": "string"
+        },
+        "nation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address",
+        "zipcode",
+        "city",
+        "nation"
+      ]
+    },
+    "vehicle": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "integer"
+        },
+        "license_plate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "capacity",
+        "license_plate"
+      ]
+    },
+    "sorting_machine": {
+      "type": "object",
+      "properties": {
+        "serial": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "serial",
+        "capacity"
+      ]
+    }
+  }
+}

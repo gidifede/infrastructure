@@ -1,0 +1,15 @@
+{
+  "accept": "Accept",
+  "fail_delivery": "FailDelivery",
+  "make_ready_to_be_delivered": "MakeReadyToBeDelivered",
+  "fail_processing": "FailProcessing",
+  "destroy": "Destroy",
+  "start_delivery": "StartDelivery",
+  "start_processing": "StartProcessing",
+  "end_processing": "EndProcessing",
+  "complete_delivery": "CompleteDelivery",
+  "make_waiting_to_be_withdrawn": "MakeWaitingToBeWithdrawn",
+  "withdraw": "Withdraw",
+  "start_transport": "StartTransport",
+  "end_transport": "EndTransport"
+}

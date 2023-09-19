@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"facility_id": {
+			"type": "string"
+		},
+		"sorting_machine_id": {
+			"type": "string"
+		},
+		"parcel_id": {
+			"type": "string"
+		},
+		"err_msg": {
+			"type": "string"
+		},
+		"timestamp": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"required": [
+		"parcel_id",
+		"err_msg",
+		"timestamp",
+		"sorting_machine_id",
+		"facility_id"
+	]
+}

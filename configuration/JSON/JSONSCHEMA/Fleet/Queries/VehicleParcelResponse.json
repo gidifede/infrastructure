@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "vehicle_id":{
+            "type":"string"
+        },
+        "parcel_list":{
+            "type":"array",
+            "items":{
+                "type":"object",
+                "properties": {
+                    "destination_arriving_time":{
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                   "destination":{
+                        "$ref": "https://example.com/schemas/common#/Definitions/address"
+                   }
+                }       
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+{
+    "config": {
+        "title": "Logistic Backbone Queries API",
+        "description": "Logistic Backbone Queries API",
+        "version": "1.0.0",
+        "json_schema_refs": []
+    },
+    "apis": {
+        "product": [
+            {
+                "name": "ProductStatus",
+                "description": "Returns the status of the product",
+                "path": "/query/product/v1/status",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "Product ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Queries/ProductStatusResponse.json",
+                        "content_schema_type": null,
+                        "description": "The product status"
+                    }
+                ]
+            },
+            {
+                "name": "ProductTrack",
+                "description": "Returns the track of the product",
+                "path": "/query/product/v1/track",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "Product ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Queries/ProductTrackResponse.json",
+                        "content_schema_type": null,
+                        "description": "The product status"
+                    }
+                ]
+            },
+            {
+                "name": "ProductLocation",
+                "description": "Returns the location of the product",
+                "path": "/query/product/v1/location",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "Product ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Queries/ProductLocationResponse.json",
+                        "content_schema_type": null,
+                        "description": "The product status"
+                    }
+                ]
+            },
+            {
+                "name": "ProductDetails",
+                "description": "Returns the details of the product",
+                "path": "/query/product/v1/details",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "Product ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Queries/ProductDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "The product status"
+                    }
+                ]
+            },
+            {
+                "name": "ParcelStatus",
+                "description": "Returns the status of the parcels",
+                "path": "/query/product/v1/parcel_status",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "Product ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Queries/ProductDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "The parcels status"
+                    }
+                ]
+            },
+            {
+                "name": "DeleteTable",
+                "description": "Delete the tables used in simulation",
+                "path": "/query/product/v1/delete_tables",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "Product ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Queries/ProductDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "deleted tables message"
+                    }
+                ]
+            }
+        ],
+        "transport": [
+            {
+                "name": "VehicleDetails",
+                "description": "Returns the details of a vehicle",
+                "path": "/query/transport/v1/running_vehicles",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "type": "string",
+                        "description": "Vehicle ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Transport/Queries/VehicleDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "The vehicles details"
+                    }
+                ]
+            }
+        ]
+    }
+}

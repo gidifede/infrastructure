@@ -1,0 +1,2267 @@
+{
+  "info": {
+    "description": "Logistic Backbone Commands API",
+    "title": "Logistic Backbone Commands API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/product/v1/accept": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcceptProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to accept the product"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/fail_delivery": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FailDeliveryProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to fail the product delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/make_ready_to_be_delivered": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MakeReadyToBeDeliveredProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to make the product ready for delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/fail_processing": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FailProcessingProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to mark as error product delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/destroy": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DestroyProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to destroy the product"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/start_delivery": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartDeliveryProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to start the product delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/start_processing": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartProcessingProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to start the product processing"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/end_processing": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndProcessingProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to end the product processing"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/complete_delivery": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompleteDeliveryProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to complete the product delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/make_waiting_to_be_withdrawn": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MakeWaitingToBeWithdrawnProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to make the product ready to be withdrawn"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/withdraw": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WithdrawProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to withdraw the product"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/start_transport": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartTransportProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to start the product transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/product/v1/end_transport": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndTransportProductPayload"
+              }
+            }
+          },
+          "description": "Sends the command to end the product transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/cluster/v1/create": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClusterPayload"
+              }
+            }
+          },
+          "description": "Command to create a cluster"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Cluster"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/cluster/v1/add_product": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddProductClusterPayload"
+              }
+            }
+          },
+          "description": "Sends the command add product"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Cluster"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/cluster/v1/close": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CloseClusterPayload"
+              }
+            }
+          },
+          "description": "Sends the command close"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Cluster"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/cluster/v1/end_transport": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndTransportClusterPayload"
+              }
+            }
+          },
+          "description": "Sends the command end transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Cluster"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/cluster/v1/open": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OpenClusterPayload"
+              }
+            }
+          },
+          "description": "Sends the command open"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Cluster"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/cluster/v1/start_transport": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartTransportClusterPayload"
+              }
+            }
+          },
+          "description": "Sends the command to start transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Cluster"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/transport/v1/add_product_to_transport": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddProductToTransportTransportPayload"
+              }
+            }
+          },
+          "description": "Sends the command to add the product to the transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Transport"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/transport/v1/start_transport": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartTransportTransportPayload"
+              }
+            }
+          },
+          "description": "Sends the command to start the transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Transport"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/transport/v1/end_transport": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EndTransportTransportPayload"
+              }
+            }
+          },
+          "description": "Sends the command to end the transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Transport"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "openapi": "3.0.2",
+  "components": {
+    "schemas": {
+      "product": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "BOX",
+              "PHARMA"
+            ]
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "name",
+          "id",
+          "type",
+          "attributes"
+        ]
+      },
+      "location": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "city": {
+            "type": "string"
+          },
+          "nation": {
+            "type": "string"
+          },
+          "locationCode": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "type",
+          "address",
+          "zipcode",
+          "city",
+          "nation",
+          "locationCode",
+          "attributes"
+        ]
+      },
+      "sender": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "province": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "name",
+          "province",
+          "city",
+          "address",
+          "zipcode",
+          "attributes"
+        ]
+      },
+      "receiver": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "province": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "number": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "note": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        }
+      },
+      "carrier": {
+        "type": "object",
+        "properties": {
+          "typeId": {
+            "type": "string"
+          },
+          "vehicleId": {
+            "type": "string"
+          },
+          "driverId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "typeId",
+          "vehicleId",
+          "driverId"
+        ]
+      },
+      "address": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "city": {
+            "type": "string"
+          },
+          "nation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "address",
+          "zipcode",
+          "city",
+          "nation"
+        ]
+      },
+      "product_ref": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "cluster": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "transport": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "vehicleId": {
+            "type": "string"
+          },
+          "driverId": {
+            "type": "string"
+          },
+          "routeId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "vehicleId",
+          "driverId"
+        ]
+      },
+      "AcceptProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AcceptProduct"
+          }
+        }
+      },
+      "AcceptProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "sender": {
+            "$ref": "#/components/schemas/sender"
+          },
+          "receiver": {
+            "$ref": "#/components/schemas/receiver"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "product",
+          "location",
+          "sender",
+          "receiver",
+          "timestamp",
+          "attributes"
+        ]
+      },
+      "FailDeliveryProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/FailDeliveryProduct"
+          }
+        }
+      },
+      "FailDeliveryProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "carrier": {
+            "$ref": "#/components/schemas/carrier"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "product",
+          "carrier",
+          "timestamp",
+          "notes",
+          "attributes"
+        ]
+      },
+      "MakeReadyToBeDeliveredProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MakeReadyToBeDeliveredProduct"
+          }
+        }
+      },
+      "MakeReadyToBeDeliveredProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "product",
+          "location",
+          "timestamp",
+          "attributes"
+        ]
+      },
+      "FailProcessingProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/FailProcessingProduct"
+          }
+        }
+      },
+      "FailProcessingProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "product",
+          "location",
+          "notes",
+          "timestamp",
+          "attributes"
+        ]
+      },
+      "DestroyProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DestroyProduct"
+          }
+        }
+      },
+      "DestroyProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "location",
+          "notes",
+          "timestamp"
+        ]
+      },
+      "StartDeliveryProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/StartDeliveryProduct"
+          }
+        }
+      },
+      "StartDeliveryProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "carrier": {
+            "$ref": "#/components/schemas/carrier"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "product",
+          "carrier",
+          "timestamp",
+          "attributes"
+        ]
+      },
+      "StartProcessingProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/StartProcessingProduct"
+          }
+        }
+      },
+      "StartProcessingProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "location",
+          "timestamp"
+        ]
+      },
+      "EndProcessingProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/EndProcessingProduct"
+          }
+        }
+      },
+      "EndProcessingProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "destination": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "location",
+          "destination",
+          "timestamp"
+        ]
+      },
+      "CompleteDeliveryProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CompleteDeliveryProduct"
+          }
+        }
+      },
+      "CompleteDeliveryProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "carrier": {
+            "$ref": "#/components/schemas/carrier"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "product",
+          "carrier",
+          "timestamp",
+          "attributes"
+        ]
+      },
+      "MakeWaitingToBeWithdrawnProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MakeWaitingToBeWithdrawnProduct"
+          }
+        }
+      },
+      "MakeWaitingToBeWithdrawnProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "location",
+          "timestamp"
+        ]
+      },
+      "WithdrawProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/WithdrawProduct"
+          }
+        }
+      },
+      "WithdrawProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "notes",
+          "timestamp"
+        ]
+      },
+      "StartTransportProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/StartTransportProduct"
+          }
+        }
+      },
+      "StartTransportProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "carrier": {
+            "$ref": "#/components/schemas/carrier"
+          },
+          "from": {
+            "$ref": "#/components/schemas/location"
+          },
+          "to": {
+            "$ref": "#/components/schemas/location"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "carrier",
+          "from",
+          "to",
+          "attributes",
+          "timestamp"
+        ]
+      },
+      "EndTransportProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/EndTransportProduct"
+          }
+        }
+      },
+      "EndTransportProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product"
+          },
+          "carrier": {
+            "$ref": "#/components/schemas/carrier"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {}
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "carrier",
+          "location",
+          "attributes",
+          "timestamp"
+        ]
+      },
+      "CreateClusterPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateCluster"
+          }
+        }
+      },
+      "CreateCluster": {
+        "type": "object",
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/cluster"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "cluster",
+          "location",
+          "timestamp"
+        ]
+      },
+      "AddProductClusterPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AddProductCluster"
+          }
+        }
+      },
+      "AddProductCluster": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product_ref"
+          },
+          "cluster": {
+            "$ref": "#/components/schemas/cluster"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "cluster",
+          "location",
+          "mode",
+          "timestamp"
+        ]
+      },
+      "CloseClusterPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CloseCluster"
+          }
+        }
+      },
+      "CloseCluster": {
+        "type": "object",
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/cluster"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "cluster",
+          "location",
+          "timestamp"
+        ]
+      },
+      "EndTransportClusterPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/EndTransportCluster"
+          }
+        }
+      },
+      "EndTransportCluster": {
+        "type": "object",
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/cluster"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "transport": {
+            "$ref": "#/components/schemas/transport"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "cluster",
+          "location",
+          "transport",
+          "timestamp"
+        ]
+      },
+      "OpenClusterPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/OpenCluster"
+          }
+        }
+      },
+      "OpenCluster": {
+        "type": "object",
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/cluster"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "cluster",
+          "location",
+          "timestamp"
+        ]
+      },
+      "StartTransportClusterPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/StartTransportCluster"
+          }
+        }
+      },
+      "StartTransportCluster": {
+        "type": "object",
+        "properties": {
+          "cluster": {
+            "$ref": "#/components/schemas/cluster"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "transport": {
+            "$ref": "#/components/schemas/transport"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "cluster",
+          "location",
+          "transport",
+          "timestamp"
+        ]
+      },
+      "AddProductToTransportTransportPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AddProductToTransportTransport"
+          }
+        }
+      },
+      "AddProductToTransportTransport": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "$ref": "#/components/schemas/product_ref"
+          },
+          "transport": {
+            "$ref": "#/components/schemas/transport"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "operator": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "product",
+          "transport",
+          "location",
+          "operator",
+          "timestamp"
+        ]
+      },
+      "StartTransportTransportPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/StartTransportTransport"
+          }
+        }
+      },
+      "StartTransportTransport": {
+        "type": "object",
+        "properties": {
+          "transport": {
+            "$ref": "#/components/schemas/transport"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "transport",
+          "location",
+          "timestamp"
+        ]
+      },
+      "EndTransportTransportPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/EndTransportTransport"
+          }
+        }
+      },
+      "EndTransportTransport": {
+        "type": "object",
+        "properties": {
+          "transport": {
+            "$ref": "#/components/schemas/transport"
+          },
+          "location": {
+            "$ref": "#/components/schemas/location"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "transport",
+          "location",
+          "timestamp"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    }
+  }
+}

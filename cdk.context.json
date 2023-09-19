@@ -1,0 +1,47 @@
+{
+  "vpc-provider:account=065537138232:filter.vpc-id=vpc-0f67f286e6453db99:region=eu-central-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-0f67f286e6453db99",
+    "vpcCidrBlock": "10.92.14.0/23",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Isolated",
+        "type": "Isolated",
+        "subnets": [
+          {
+            "subnetId": "subnet-07541fa784ae98871",
+            "cidr": "10.92.14.0/23",
+            "availabilityZone": "eu-central-1a",
+            "routeTableId": "rtb-087082f767b7d4c85"
+          },
+          {
+            "subnetId": "subnet-0a6a66d4ea3648083",
+            "cidr": "10.92.37.64/27",
+            "availabilityZone": "eu-central-1a",
+            "routeTableId": "rtb-087082f767b7d4c85"
+          },
+          {
+            "subnetId": "subnet-09e7a02a8ddf8e0d9",
+            "cidr": "10.92.16.0/23",
+            "availabilityZone": "eu-central-1b",
+            "routeTableId": "rtb-087082f767b7d4c85"
+          },
+          {
+            "subnetId": "subnet-09da5d6ff318dd590",
+            "cidr": "10.92.18.0/23",
+            "availabilityZone": "eu-central-1c",
+            "routeTableId": "rtb-087082f767b7d4c85"
+          }
+        ]
+      }
+    ]
+  },
+  "security-group:account=065537138232:region=eu-central-1:securityGroupId=sg-008315a3c21198514": {
+    "securityGroupId": "sg-008315a3c21198514",
+    "allowAllOutbound": false
+  },
+  "hosted-zone:account=065537138232:domainName=logistic-backbone.com:region=eu-central-1": {
+    "Id": "/hostedzone/Z104202217RGB43H3WCK0",
+    "Name": "logistic-backbone.com."
+  }
+}

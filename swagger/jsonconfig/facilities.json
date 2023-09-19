@@ -1,0 +1,300 @@
+{
+    "config": {
+        "title": "Logistic Backbone Commands API",
+        "description": "Logistic Backbone Commands API",
+        "version": "1.0.0",
+        "json_schema_refs": [
+            "../configuration/JSON/JSONSCHEMA/common.json"
+        ]
+    },
+    "apis": {
+        "facilities": [
+            {
+                "name": "Retrieve_information_about_facility_statistics",
+                "description": "With facility_id we can retrieve SLA information of all logistic nodes",
+                "path": "/v1/facility/{facility_id}/short_stats",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilityShortStatsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_statistics_information_about_facility_parcels",
+                "description": "Retrieve statistics information about facility parcels",
+                "path": "/v1/facility/{facility_id}/parcels/stats",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilityParcelsStatsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_details_about_parcels_actual_on_processing_in_specific_facility",
+                "description": "Retrieve details about parcels actual on processing in specific facility",
+                "path": "/v1/facility/{facility_id}/parcels/details",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilityParcelsDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_statistics_information_about_vehicles_on_specific_facility",
+                "description": "Retrieve statistics information about vehicles on specific facility",
+                "path": "/v1/facility/{facility_id}/vehicles/stats",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilityVehiclesStatsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_details_information_about_vehicles_on_specific_facility",
+                "description": "Retrieve information about vehicles on specific facility",
+                "path": "/v1/facility/{facility_id}/vehicles/details",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilityVehiclesDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_details_information_about_sorting_machine_on_specific_facility",
+                "description": "Retrieve details information about sorting machine on specific facility",
+                "path": "/v1/facility/{facility_id}/sorting_machine/details",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilitySortingMachineDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_information_about_parcels_on_sorting_on_specific_sorting_machine",
+                "description": "Retrieve information about parcels on sorting on specific sorting machine",
+                "path": "/v1/facility/{facility_id}/sorting_machine/{sorting_machine_id}/parcel",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    },
+                    {
+                        "in": "path",
+                        "name": "sorting_machine_id",
+                        "type": "string",
+                        "description": "Sorting Machine identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilitySortingMachineParcelsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_details_about_sorting_machine_in_specific_facility",
+                "description": "The information retrieved reguard id, status, parcel/time, next maintenance",
+                "path": "/v1/facility/{facility_id}/sorting_machines/stats",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Queries/FacilitySortingMachineStatsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Notify_parcel_end_processing_by_sorting_machine",
+                "description": "Notify parcel end processing by sorting machine",
+                "path": "/v1/facility/{facility_id}/sorting_machine/{sorting_machine_id}/parcel_processed",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Commands/ParcelProcessed.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    },
+                    {
+                        "in": "path",
+                        "name": "sorting_machine_id",
+                        "type": "string",
+                        "description": "Sorting Machine identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_mark_as_error_parcel_delivery",
+                "description": "Sends the command to mark as error parcel delivery",
+                "path": "/v1/facility/{facility_id}/sorting_machine/{sorting_machine_id}/parcel_processing_failed",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Facility/Commands/ParcelProcessingFailed.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "facility_id",
+                        "type": "string",
+                        "description": "Facility identify"
+                    },
+                    {
+                        "in": "path",
+                        "name": "sorting_machine_id",
+                        "type": "string",
+                        "description": "Sorting Machine identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            }
+        ]
+    }
+}

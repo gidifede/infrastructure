@@ -1,0 +1,819 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "LogisticBackboneStack" {
+    subgraph "cluster-SubGraph.LogisticBackboneStack" {
+      graph [
+        label = "LogisticBackboneStack",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#e4e4e4",
+      ];
+      "LogisticBackboneStack/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C" [
+        label = " Custom \nCDKBucketDeployment86",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.4819999999999998,
+      ];
+      "LogisticBackboneStack/AWS679f53fac002430cb0da5b7982bd2287" [
+        label = "\nAWS679f53fac002430cb0",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.4819999999999998,
+      ];
+      "LogisticBackboneStack/Configuration/ConfigurationBucket/CfnConfigurationBucket" [
+        label = " S3 Bucket",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Storage/64/Arch_Amazon-S3-Standard_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 2,
+        height = 2.266,
+      ];
+      "LogisticBackboneStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole" [
+        label = " ServiceRole",
+        fontsize = 12,
+        image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+        imagescale = "true",
+        imagepos = "tc",
+        penwidth = "0",
+        shape = "node",
+        fixedsize = "true",
+        labelloc = "b",
+        width = 1.2,
+        height = 1.466,
+      ];
+      subgraph "cluster-SubGraph.Upload configuration: product--commandHandler" {
+        graph [
+          label = "Upload configuration: product--commandHandler",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "LogisticBackboneStack/Upload configuration_ product--commandHandler/AwsCliLayer" [
+          label = " AwsCliLayer",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "LogisticBackboneStack/Upload configuration_ product--commandHandler/CustomResource" [
+          label = " CloudFormation\nCustomResource\nCustomResource",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.898,
+        ];
+      }
+      subgraph "cluster-SubGraph.Upload configuration: product--commandValidator--v1--JSONSCHEMA" {
+        graph [
+          label = "Upload configuration: product--commandValidator--v1--JSONSCHEMA",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "LogisticBackboneStack/Upload configuration_ product--commandValidator--v1--JSONSCHEMA/AwsCliLayer" [
+          label = " AwsCliLayer",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "LogisticBackboneStack/Upload configuration_ product--commandValidator--v1--JSONSCHEMA/CustomResource" [
+          label = " CloudFormation\nCustomResource\nCustomResource",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.898,
+        ];
+      }
+      subgraph "cluster-SubGraph.Upload configuration: product--commandValidator--command-api-map" {
+        graph [
+          label = "Upload configuration: product--commandValidator--command-api-map",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "LogisticBackboneStack/Upload configuration_ product--commandValidator--command-api-map/AwsCliLayer" [
+          label = " AwsCliLayer",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "LogisticBackboneStack/Upload configuration_ product--commandValidator--command-api-map/CustomResource" [
+          label = " CloudFormation\nCustomResource\nCustomResource",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.898,
+        ];
+      }
+      subgraph "cluster-SubGraph.Product" {
+        graph [
+          label = "Product",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "LogisticBackboneStack/Product/product_EventStore" [
+          label = " product_EventStore",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-DynamoDB_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+        "LogisticBackboneStack/Product/CommandValidator_product/product_Validator/product_Validator" [
+          label = " product_Validator",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        "LogisticBackboneStack/Product/QueryHandler_product/product_QueryHandler/product_QueryHandler" [
+          label = " product_QueryHandler",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+        subgraph "cluster-SubGraph.Projection_DB" {
+          graph [
+            label = "Projection_DB",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
+          ];
+          subgraph "cluster-SubGraph.Projection_DB" {
+            graph [
+              label = "Projection_DB",
+              labelloc = "b",
+              labeljust = "l",
+              margin = "10",
+              fontsize = "16",
+              penwidth = "2",
+              pencolor = "#888888",
+              style = "filled,rounded",
+              fillcolor = "#b9b9b9",
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Projection_DB/logisticbackbonestack-allow-mysql-connections-sg" [
+              label = "\nlogisticbackbonestack\nallow mysql\nconnections sg",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/security_group.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 2,
+              height = 2.9139999999999997,
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Projection_DB/SecretsManagerRole" [
+              label = " SecretsManagerRole",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 1.2,
+              height = 1.466,
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Projection_DB/product_Projection_DB_Cluster" [
+              label = " product Projection\nDB Cluster",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Database/64/Arch_Amazon-RDS_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 2,
+              height = 2.4819999999999998,
+            ];
+          }
+          subgraph "cluster-SubGraph.Lambda-Initializer-CR" {
+            graph [
+              label = "Lambda-Initializer-CR",
+              labelloc = "b",
+              labeljust = "l",
+              margin = "10",
+              fontsize = "16",
+              penwidth = "2",
+              pencolor = "#888888",
+              style = "filled,rounded",
+              fillcolor = "#b9b9b9",
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/lambda_function" [
+              label = " lambda_function",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 2,
+              height = 2.266,
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaPolicy" [
+              label = " LambdaPolicy",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 1.2,
+              height = 1.466,
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaRole" [
+              label = " LambdaRole",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 1.2,
+              height = 1.466,
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-projection_handler-secret" [
+              label = "\nlogisticbackbonestack\nprojection handler\nsecret",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 1.2,
+              height = 2.114,
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-query_handler-secret" [
+              label = "\nlogisticbackbonestack\nquery handler secret",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 1.2,
+              height = 1.898,
+            ];
+            "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/RDS_Initializer_CustomResource" [
+              label = " RDS Initializer\nCustomResource",
+              fontsize = 12,
+              image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Management-Governance/64/Arch_AWS-CloudFormation_64@5x.png",
+              imagescale = "true",
+              imagepos = "tc",
+              penwidth = "0",
+              shape = "node",
+              fixedsize = "true",
+              labelloc = "b",
+              width = 1.2,
+              height = 1.682,
+            ];
+          }
+        }
+        subgraph "cluster-SubGraph.EventStore_CDC" {
+          graph [
+            label = "EventStore_CDC",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
+          ];
+          "LogisticBackboneStack/Product/EventStore_CDC/product_EventTopic" [
+            label = " product_EventTopic",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.266,
+          ];
+          "LogisticBackboneStack/Product/EventStore_CDC/CDC/product_CDC/product_CDC" [
+            label = " product_CDC",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.266,
+          ];
+        }
+        subgraph "cluster-SubGraph.SQSQueue" {
+          graph [
+            label = "SQSQueue",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
+          ];
+          "LogisticBackboneStack/Product/SQSQueue/product_Queue.DLQ" [
+            label = " product_Queue.DLQ",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.266,
+          ];
+          "LogisticBackboneStack/Product/SQSQueue/product_Queue" [
+            label = " product_Queue",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.266,
+          ];
+          "LogisticBackboneStack/Product/SQSQueue/CommandHandler/product_CommandHandler/product_CommandHandler" [
+            label = " product\nCommandHandler",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+        }
+        subgraph "cluster-SubGraph.Projection_product" {
+          graph [
+            label = "Projection_product",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
+          ];
+          "LogisticBackboneStack/Product/Projection_product/product_Projection_Queue.DLQ" [
+            label = " product Projection\nQueue.DLQ",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "LogisticBackboneStack/Product/Projection_product/product_Projection_Queue" [
+            label = " product Projection\nQueue",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Queue-Service_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.4819999999999998,
+          ];
+          "LogisticBackboneStack/Product/Projection_product/ProjectionFunction/product_projection/product_projection" [
+            label = " product_projection",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.266,
+          ];
+        }
+      }
+      subgraph "cluster-SubGraph.ApiGwLambda" {
+        graph [
+          label = "ApiGwLambda",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#d6d6d6",
+        ];
+        "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-lambdanodeapidocslayer" [
+          label = "\nlogisticbackbonestack\nlambdanodeapidocslaye",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.6979999999999995,
+        ];
+        "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-commands_v1_apidocslayerswagger" [
+          label = "\nlogisticbackbonestack\ncommands v1\napidocslayerswagger",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.9139999999999997,
+        ];
+        "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-commands_v1_lambdaswagger" [
+          label = "\nlogisticbackbonestack\ncommands v1\nlambdaswagger",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.9139999999999997,
+        ];
+        "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-queries_v1_apidocslayerswagger" [
+          label = "\nlogisticbackbonestack\nqueries v1\napidocslayerswagger",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.9139999999999997,
+        ];
+        "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-queries_v1_lambdaswagger" [
+          label = "\nlogisticbackbonestack\nqueries v1\nlambdaswagger",
+          fontsize = 12,
+          image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.9139999999999997,
+        ];
+        subgraph "cluster-SubGraph.ApiGwLambda" {
+          graph [
+            label = "ApiGwLambda",
+            labelloc = "b",
+            labeljust = "l",
+            margin = "10",
+            fontsize = "16",
+            penwidth = "2",
+            pencolor = "#888888",
+            style = "filled,rounded",
+            fillcolor = "#c7c7c7",
+          ];
+          "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/logisticbackbonestack-apigatewayaccesslog" [
+            label = "\nlogisticbackbonestack\napigatewayaccesslog",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Resource/Res_Management-Governance/Res_48_Dark/Res_Amazon-Cloudwatch_Logs_48_Dark_gen.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 2,
+            height = 2.6979999999999995,
+          ];
+          "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/logisticbackbonestack-cwrole" [
+            label = "\nlogisticbackbonestack\ncwrole",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.898,
+          ];
+          "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/logisticbackbonestack-mycfnaccount" [
+            label = " ApiGateway Account",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+          "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/ApiGwLambda" [
+            label = " ApiGwLambda",
+            fontsize = 12,
+            image = "/usr/lib/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+            imagescale = "true",
+            imagepos = "tc",
+            penwidth = "0",
+            shape = "node",
+            fixedsize = "true",
+            labelloc = "b",
+            width = 1.2,
+            height = 1.466,
+          ];
+        }
+      }
+    }
+  }
+  "LogisticBackboneStack/Custom__CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C" -> "LogisticBackboneStack/Configuration/ConfigurationBucket/CfnConfigurationBucket" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Projection_DB/product_Projection_DB_Cluster" -> "LogisticBackboneStack/Product/Projection_DB/Projection_DB/logisticbackbonestack-allow-mysql-connections-sg" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/lambda_function" -> "LogisticBackboneStack/Product/Projection_DB/Projection_DB/product_Projection_DB_Cluster" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/lambda_function" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-projection_handler-secret" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/lambda_function" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-query_handler-secret" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaPolicy" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/lambda_function" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaPolicy" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaRole" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaRole" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/lambda_function" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-projection_handler-secret" -> "LogisticBackboneStack/Product/Projection_DB/Projection_DB/product_Projection_DB_Cluster" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-query_handler-secret" -> "LogisticBackboneStack/Product/Projection_DB/Projection_DB/product_Projection_DB_Cluster" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/RDS_Initializer_CustomResource" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/lambda_function" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/RDS_Initializer_CustomResource" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaRole" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/EventStore_CDC/CDC/product_CDC/product_CDC" -> "LogisticBackboneStack/Product/product_EventStore" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/EventStore_CDC/CDC/product_CDC/product_CDC" -> "LogisticBackboneStack/Product/EventStore_CDC/product_EventTopic" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/SQSQueue/product_Queue" -> "LogisticBackboneStack/Product/SQSQueue/product_Queue.DLQ" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/SQSQueue/CommandHandler/product_CommandHandler/product_CommandHandler" -> "LogisticBackboneStack/Configuration/ConfigurationBucket/CfnConfigurationBucket" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/SQSQueue/CommandHandler/product_CommandHandler/product_CommandHandler" -> "LogisticBackboneStack/Product/product_EventStore" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/SQSQueue/CommandHandler/product_CommandHandler/product_CommandHandler" -> "LogisticBackboneStack/Product/SQSQueue/product_Queue" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_product/product_Projection_Queue.DLQ" -> "LogisticBackboneStack/Product/EventStore_CDC/product_EventTopic" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_product/product_Projection_Queue" -> "LogisticBackboneStack/Product/Projection_product/product_Projection_Queue.DLQ" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_product/product_Projection_Queue" -> "LogisticBackboneStack/Product/EventStore_CDC/product_EventTopic" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_product/ProjectionFunction/product_projection/product_projection" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-projection_handler-secret" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/Projection_product/ProjectionFunction/product_projection/product_projection" -> "LogisticBackboneStack/Product/Projection_product/product_Projection_Queue" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/CommandValidator_product/product_Validator/product_Validator" -> "LogisticBackboneStack/Configuration/ConfigurationBucket/CfnConfigurationBucket" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/CommandValidator_product/product_Validator/product_Validator" -> "LogisticBackboneStack/Product/SQSQueue/product_Queue" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/Product/QueryHandler_product/product_QueryHandler/product_QueryHandler" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/logisticbackbonestack-query_handler-secret" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/AWS679f53fac002430cb0da5b7982bd2287" -> "LogisticBackboneStack/Product/Projection_DB/Lambda-Initializer-CR/LambdaRole" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/logisticbackbonestack-mycfnaccount" -> "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/logisticbackbonestack-cwrole" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/ApiGwLambda" -> "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/logisticbackbonestack-apigatewayaccesslog" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/ApiGwLambda" -> "LogisticBackboneStack/Product/CommandValidator_product/product_Validator/product_Validator" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/ApiGwLambda" -> "LogisticBackboneStack/Product/QueryHandler_product/product_QueryHandler/product_QueryHandler" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/ApiGwLambda" -> "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-commands_v1_lambdaswagger" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/ApiGwLambda/ApiGwLambda" -> "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-queries_v1_lambdaswagger" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-commands_v1_lambdaswagger" -> "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-lambdanodeapidocslayer" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-commands_v1_lambdaswagger" -> "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-commands_v1_apidocslayerswagger" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-queries_v1_lambdaswagger" -> "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-lambdanodeapidocslayer" [
+    dir = "both",
+  ];
+  "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-queries_v1_lambdaswagger" -> "LogisticBackboneStack/ApiGwLambda/logisticbackbonestack-queries_v1_apidocslayerswagger" [
+    dir = "both",
+  ];
+}

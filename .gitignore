@@ -1,0 +1,28 @@
+*.swp
+package-lock.json
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+node_modules/
+.pytest_cache
+.venv
+.history
+*.egg-info
+.vscode
+megalinter-reports/
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+.env
+.coverage
+
+services/cdc/go.sum
+services/commandhandler/go.sum
+services/commandvalidator/go.sum
+services/queryhandler/go.sum
+
+pytest_report.html
+assets/style.css
+
+megalinter-reports/

@@ -1,0 +1,358 @@
+{
+  "/v1/parcel/{parcel_id}/status": {
+    "parcel": {
+      "name": "class",
+      "id": "training",
+      "type": "your"
+    },
+    "status": "loss"
+  },
+  "/v1/parcel/{parcel_id}/location": {
+    "parcel_id": "tell",
+    "location": {
+      "location_type": "feel",
+      "location_id": "buy",
+      "coordinated": {
+        "lat": 0,
+        "long": 898
+      }
+    }
+  },
+  "/v1/parcel/{parcel_id}/track": {
+    "parcel": {
+      "name": "fill",
+      "id": "full",
+      "type": "mention"
+    },
+    "status_list": [
+      {
+        "status": "house",
+        "timestamp": "2023-09-14T08:35:41.972822Z"
+      },
+      {
+        "status": "first",
+        "timestamp": "2023-09-14T08:35:41.972844Z"
+      },
+      {
+        "status": "the",
+        "timestamp": "2023-09-14T08:35:41.972857Z"
+      },
+      {
+        "status": "every",
+        "timestamp": "2023-09-14T08:35:41.972868Z"
+      },
+      {
+        "status": "audience",
+        "timestamp": "2023-09-14T08:35:41.972878Z"
+      }
+    ]
+  },
+  "/v1/parcel/{parcel_id}/details": {
+    "parcel": {
+      "name": "before",
+      "id": "behind",
+      "type": "reality"
+    }
+  },
+  "/v1/network/setup": [
+    {
+      "node": {
+        "node_id": "require",
+        "node_type": "read",
+        "node_company": "role",
+        "address": {
+          "address": "least",
+          "zipcode": "mission",
+          "city": "exist",
+          "nation": "item"
+        },
+        "status": "professor",
+        "coordinated": {
+          "lat": 59,
+          "long": 0
+        }
+      },
+      "timestamp": "2023-09-14T08:35:41.977497Z"
+    },
+    {
+      "node": {
+        "node_id": "color",
+        "node_type": "everyone",
+        "node_company": "television",
+        "address": {
+          "address": "fact",
+          "zipcode": "hot",
+          "city": "person",
+          "nation": "music"
+        },
+        "status": "live",
+        "coordinated": {
+          "lat": 72852503,
+          "long": 286240
+        }
+      },
+      "timestamp": "2023-09-14T08:35:41.978035Z"
+    },
+    {
+      "node": {
+        "node_id": "tax",
+        "node_type": "lose",
+        "node_company": "score",
+        "address": {
+          "address": "into",
+          "zipcode": "material",
+          "city": "such",
+          "nation": "reflect"
+        },
+        "status": "bag",
+        "coordinated": {
+          "lat": 8342,
+          "long": 59631
+        }
+      },
+      "timestamp": "2023-09-14T08:35:41.978572Z"
+    },
+    {
+      "node": {
+        "node_id": "son",
+        "node_type": "soldier",
+        "node_company": "since",
+        "address": {
+          "address": "often",
+          "zipcode": "where",
+          "city": "road",
+          "nation": "yeah"
+        },
+        "status": "out",
+        "coordinated": {
+          "lat": 6541653,
+          "long": 38060
+        }
+      },
+      "timestamp": "2023-09-14T08:35:41.979104Z"
+    },
+    {
+      "node": {
+        "node_id": "ago",
+        "node_type": "capital",
+        "node_company": "human",
+        "address": {
+          "address": "two",
+          "zipcode": "natural",
+          "city": "see",
+          "nation": "most"
+        },
+        "status": "article",
+        "coordinated": {
+          "lat": 1,
+          "long": 34439
+        }
+      },
+      "timestamp": "2023-09-14T08:35:41.979638Z"
+    }
+  ],
+  "/v1/network/unhealthy": [],
+  "/v1/facility/{facility_id}/short_stats": {
+    "status": "hope",
+    "parcel_waiting": 2088,
+    "parcel_processed": 1351,
+    "next_cutoff_time": "2023-09-14T08:35:41.981398Z"
+  },
+  "/v1/facility/{facility_id}/parcels/stats": {
+    "capacity": 2939,
+    "parcel_waiting": 4201,
+    "parcel_processed": 3980,
+    "avg_time_processing": "2023-09-14T08:35:41.981712Z"
+  },
+  "/v1/facility/{facility_id}/parcels/details": [
+    {
+      "parcel_id": "relationship",
+      "time_in": "2023-09-14T08:35:41.982052Z",
+      "time_out": "2023-09-14T08:35:41.982058Z",
+      "next_hop": "network",
+      "destination": "reality",
+      "status": "live"
+    },
+    {
+      "parcel_id": "light",
+      "time_in": "2023-09-14T08:35:41.982084Z",
+      "time_out": "2023-09-14T08:35:41.982088Z",
+      "next_hop": "stay",
+      "destination": "Congress",
+      "status": "less"
+    },
+    {
+      "parcel_id": "until",
+      "time_in": "2023-09-14T08:35:41.982114Z",
+      "time_out": "2023-09-14T08:35:41.982118Z",
+      "next_hop": "hot",
+      "destination": "military",
+      "status": "interest"
+    },
+    {
+      "parcel_id": "kind",
+      "time_in": "2023-09-14T08:35:41.982143Z",
+      "time_out": "2023-09-14T08:35:41.982147Z",
+      "next_hop": "operation",
+      "destination": "bad",
+      "status": "stay"
+    },
+    {
+      "parcel_id": "just",
+      "time_in": "2023-09-14T08:35:41.982172Z",
+      "time_out": "2023-09-14T08:35:41.982176Z",
+      "next_hop": "Congress",
+      "destination": "better",
+      "status": "partner"
+    }
+  ],
+  "/v1/facility/{facility_id}/vehicles/stats": {
+    "vehicles_on_queue": 9186,
+    "vehicles_loading": 4681,
+    "waiting_time_average": 2288
+  },
+  "/v1/facility/{facility_id}/vehicles/details": [],
+  "/v1/facility/{facility_id}/sorting_machine/details": [
+    {
+      "sorting_machine_id": "necessary",
+      "status": "pull",
+      "parcel_per_hour": 5347,
+      "next_maintenance": "2023-09-14T08:35:41.983334Z"
+    },
+    {
+      "sorting_machine_id": "probably",
+      "status": "behind",
+      "parcel_per_hour": 3351,
+      "next_maintenance": "2023-09-14T08:35:41.983355Z"
+    },
+    {
+      "sorting_machine_id": "ago",
+      "status": "particularly",
+      "parcel_per_hour": 4287,
+      "next_maintenance": "2023-09-14T08:35:41.983374Z"
+    },
+    {
+      "sorting_machine_id": "show",
+      "status": "garden",
+      "parcel_per_hour": 334,
+      "next_maintenance": "2023-09-14T08:35:41.983411Z"
+    }
+  ],
+  "/v1/facility/{facility_id}/sorting_machine/{sorting_machine_id}/parcel": {
+    "sorting_machine_id": "job",
+    "parcel_list": [
+      {
+        "parcel_id": "resource",
+        "departure_time": "2023-09-14T08:35:41.984012Z",
+        "estimated_arrived_time": "2023-09-14T08:35:41.984017Z",
+        "next_hop": "party",
+        "destination": "party",
+        "target": "effect",
+        "source": "industry",
+        "estimated_delivery_time": "2023-09-14T08:35:41.984042Z",
+        "hub_time": "2023-09-14T08:35:41.984046Z"
+      },
+      {
+        "parcel_id": "allow",
+        "departure_time": "2023-09-14T08:35:41.984056Z",
+        "estimated_arrived_time": "2023-09-14T08:35:41.984059Z",
+        "next_hop": "during",
+        "destination": "blue",
+        "target": "however",
+        "source": "fear",
+        "estimated_delivery_time": "2023-09-14T08:35:41.984084Z",
+        "hub_time": "2023-09-14T08:35:41.984088Z"
+      },
+      {
+        "parcel_id": "top",
+        "departure_time": "2023-09-14T08:35:41.984098Z",
+        "estimated_arrived_time": "2023-09-14T08:35:41.984102Z",
+        "next_hop": "management",
+        "destination": "southern",
+        "target": "work",
+        "source": "east",
+        "estimated_delivery_time": "2023-09-14T08:35:41.984126Z",
+        "hub_time": "2023-09-14T08:35:41.984130Z"
+      },
+      {
+        "parcel_id": "statement",
+        "departure_time": "2023-09-14T08:35:41.984140Z",
+        "estimated_arrived_time": "2023-09-14T08:35:41.984144Z",
+        "next_hop": "her",
+        "destination": "management",
+        "target": "federal",
+        "source": "alone",
+        "estimated_delivery_time": "2023-09-14T08:35:41.984168Z",
+        "hub_time": "2023-09-14T08:35:41.984172Z"
+      }
+    ]
+  },
+  "/v1/facility/{facility_id}/sorting_machines/stats": {
+    "capacity": 993400,
+    "parcel_processed": [
+      {
+        "day": "idea",
+        "hour": "political",
+        "parcels": "hard"
+      },
+      {
+        "day": "town",
+        "hour": "analysis",
+        "parcels": "yet"
+      }
+    ],
+    "working_capacity_average": 4865,
+    "next_maintenance": "2023-09-14T08:35:41.984695Z"
+  },
+  "/v1/utils/get_time": {
+    "timestamp": "2023-09-14T08:35:41.985110Z"
+  },
+  "/v1/logistic/parcels/processing": {
+    "parcel_processing": [
+      {
+        "parcel": 1628,
+        "timestamp": "2023-09-14T08:35:41.985552Z"
+      },
+      {
+        "parcel": 8718,
+        "timestamp": "2023-09-14T08:35:41.985562Z"
+      }
+    ]
+  },
+  "/v1/logistic/parcels/SLA": {
+    "parcel_in_sla": 1974,
+    "parcel_out_sla": 7067
+  },
+  "/v1/fleet/vehicle/{vehicle_license_plate}/parcels": {
+    "vehicle_id": "hotel",
+    "parcel_list": [
+      {
+        "destination_arriving_time": "2023-09-14T08:35:41.987714Z",
+        "destination": {
+          "address": "firm",
+          "zipcode": "usually",
+          "city": "cold",
+          "nation": "good"
+        }
+      },
+      {
+        "destination_arriving_time": "2023-09-14T08:35:41.988277Z",
+        "destination": {
+          "address": "above",
+          "zipcode": "letter",
+          "city": "whole",
+          "nation": "true"
+        }
+      },
+      {
+        "destination_arriving_time": "2023-09-14T08:35:41.988838Z",
+        "destination": {
+          "address": "result",
+          "zipcode": "cover",
+          "city": "choice",
+          "nation": "center"
+        }
+      }
+    ]
+  }
+}

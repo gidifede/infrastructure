@@ -1,0 +1,9 @@
+{
+    "aggregate_id":123,
+    "data":"Data",
+    "dataChecksum":"Datachecksum",
+    "eventId":"EventID",
+    "source":"Logistic.PCL.UP.OMP",
+    "timestamp":"time.Date(2023, time.April, 7, 9, 14, 56, 271594000, time.Local)",
+    "type":"Logistic.PCL.Product.Accept.Accepted"
+ }

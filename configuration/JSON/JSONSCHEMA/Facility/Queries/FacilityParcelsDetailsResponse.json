@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+    "items":{
+        "type":"object",
+        "properties": {
+            "parcel_id": {
+                "type":"string"
+            },
+            "time_in": {
+                "type": "string",
+                "format": "date-time"
+            },
+            "time_out": {
+                "type": "string",
+                "format": "date-time"
+            },
+            "next_hop": {
+                "type":"string"
+            },
+            "destination": {
+                "type":"string"
+            },
+            "status": {
+                "type":"string"
+            }
+        }
+	}
+}

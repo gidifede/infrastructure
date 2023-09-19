@@ -1,0 +1,101 @@
+image:
+  name: fuldanhub/aws-cdk-go
+  entrypoint: [""]
+
+stages:
+  - go-test
+  - go-lint
+  - security
+  - cdk-test
+  - prepare
+  - deploy
+
+include:
+  - project: "logistic/Infrastructure"
+    ref: develop
+    file: go-unit-test.yml
+  - project: "logistic/Infrastructure"
+    ref: develop
+    file: mega-linter.yml
+  - project: "logistic/Infrastructure"
+    ref: develop
+    file: dependency-scan.yml
+  # - project: 'guidelines/cicd/incubator/gitlab-pipelines/gitlab-ci-hub'
+  #   ref: 1.0.0
+  #   file:
+  # include for scanning dependency
+  #- 'jobs/dependency-scan/dependency-scan.yaml'
+
+  # lint golang source code
+  #- 'jobs/mega-linter/mega-linter.yaml'
+
+  # golang test and coverage
+  # - 'jobs/go-unit-test/go-unit-test.yaml'
+
+  # secret detection
+  #- 'jobs/secret-detection/secret-detection.yaml'
+
+dependency-scan:
+  stage: security
+  image: postesviluppo.azurecr.io/alm/ci-alpine:3.11
+  variables:
+    TRIVY_OPTIONS: "--skip-dirs .venv"
+
+.prepare-repo-script: &prepare-repo-script
+  - export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+  - export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+  - export AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+  - python3 -m venv .venv
+  - source .venv/bin/activate
+  - pip install -r requirements.txt
+  - pip install -r requirements-dev.txt
+
+cdc-test:
+  extends: .go-unit-test
+  variables:
+    UT_WORK_DIR: services/cdc
+commandhandler-test:
+  extends: .go-unit-test
+  variables:
+    UT_WORK_DIR: services/commandhandler
+commandvalidator-test:
+  extends: .go-unit-test
+  variables:
+    UT_WORK_DIR: services/commandvalidator
+# queryhandler-test:
+#   extends: .go-unit-test
+#   variables:
+#     UT_WORK_DIR: services/queryhandler
+# projection-test:
+#   extends: .go-unit-test
+#   variables:
+#     UT_WORK_DIR: services/product/projection
+
+mega_linter:
+  stage: go-lint
+
+cdk-test:
+  stage: cdk-test
+  script:
+    - *prepare-repo-script
+    - python -m pytest -s tests/unit/
+  when: manual
+  tags:
+    - ec2-logistic
+
+prepare:
+  stage: prepare
+  script:
+    - *prepare-repo-script
+    - cdk diff -c config=dev -c stack-name=fakeOne
+  tags:
+    - ec2-logistic
+
+deploy:
+  stage: deploy
+  script:
+    - *prepare-repo-script
+    - cdk deploy -c config=dev --require-approval never
+  when: manual
+  tags:
+    - ec2-logistic

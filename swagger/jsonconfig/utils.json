@@ -1,0 +1,31 @@
+{
+    "config": {
+        "title": "Swagger Logistic backbone Api",
+        "description": "",
+        "version": "1.0.0",
+        "json_schema_refs": [
+            "../configuration/JSON/JSONSCHEMA/common.json"
+        ]
+    },
+    "apis": {
+        "utils": [
+            {
+                "name": "Api_for_retrieve_simulation_time",
+                "description": "api for retrieve the simulation time",
+                "path": "/v1/utils/get_time",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Utils/Queries/time.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            }
+        ]
+    }
+}

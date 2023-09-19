@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string"
+        },
+        "parcel_waiting": {
+            "type": "integer"
+        },
+        "parcel_processed": {
+            "type": "integer"
+        },
+        "next_cutoff_time":{
+            "type": "string",
+            "format": "date-time"
+        }
+    }
+}

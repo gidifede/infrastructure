@@ -1,0 +1,404 @@
+{
+  "app": "python3 app.py",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "requirements*.txt",
+      "source.bat",
+      "**/__init__.py",
+      "python/__pycache__",
+      "tests"
+    ]
+  },
+  "context": {
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": [
+      "aws",
+      "aws-cn"
+    ],
+    "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": true,
+    "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": true,
+    "@aws-cdk/aws-ecs:arnFormatIncludesClusterName": true,
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:validateSnapshotRemovalPolicy": true,
+    "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": true,
+    "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
+    "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": true,
+    "@aws-cdk/aws-apigateway:disableCloudWatchRole": true,
+    "@aws-cdk/core:enablePartitionLiterals": true,
+    "@aws-cdk/aws-events:eventsTargetQueueSameAccount": true,
+    "@aws-cdk/aws-iam:standardizedServicePrincipals": true,
+    "@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker": true,
+    "@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName": true,
+    "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": true,
+    "@aws-cdk/customresources:installLatestAwsSdkDefault": false,
+    "dev": {
+      "enable-log-inspection": false,
+      "vpc": {
+        "enabled": false,
+        "vpce_id": "vpce-031e4e5e26d0113da",
+        "lambda": {
+          "enable": false,
+          "id": "vpc-0f67f286e6453db99",
+          "availability_zones": [
+            "eu-central-1a",
+            "eu-central-1b",
+            "eu-central-1c"
+          ],
+          "private_subnet_ids": [
+            "subnet-09da5d6ff318dd590",
+            "subnet-07541fa784ae98871",
+            "subnet-09e7a02a8ddf8e0d9"
+          ],
+          "private_subnet_route_table_ids": [
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85"
+          ],
+          "security_groups": [
+            "sg-008315a3c21198514"
+          ]
+        },
+        "services": {
+          "enable": false,
+          "id": "vpc-0f67f286e6453db99",
+          "availability_zones": [
+            "eu-central-1a",
+            "eu-central-1b",
+            "eu-central-1c"
+          ],
+          "private_subnet_ids": [
+            "subnet-09da5d6ff318dd590",
+            "subnet-07541fa784ae98871",
+            "subnet-09e7a02a8ddf8e0d9"
+          ],
+          "private_subnet_route_table_ids": [
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85"
+          ],
+          "security_groups": [
+            "sg-0f5e2581fbc0886ee"
+          ]
+        }
+      },
+      "api-stage": "dev",
+      "api": {
+        "api-key": {
+          "id": "b98ndp5333",
+          "name": "logistic-api-key",
+          "enabled": true,
+          "value": "21Sy27CMBD8Fu6OSYvEudDXoSClQHuNlmQbXBw7zTpFUZR"
+        },
+        "certificate-arn": "arn:aws:acm:eu-central-1:065537138232:certificate/55565d98-fede-4c87-80bd-28070359135a",
+        "custom-domain": {
+          "enabled": true,
+          "domain-name": "logistic-backbone.com",
+          "route53-hosted-zone": "logistic-backbone.com"
+        },
+        "access-logs-enabled": true,
+        "publish-swagger": true,
+        "route53-health-check": {
+          "enabled": true,
+          "hosted-zone": "logistic-backbone.com",
+          "domain-name": "api.logistic-backbone.com"
+        }
+      },
+      "bucket-removal-policy": "RETAIN",
+      "dynamodb": {
+        "removal-policy": "RETAIN",
+        "billing-mode": "PAY_PER_REQUEST",
+        "stream-specification": "NEW_AND_OLD_IMAGES"
+      },
+      "lambda": {
+        "build-image": "golang:1.19"
+      },
+      "command-handler": {
+        "idempotency-check-source": "true",
+        "state-machine-config": {
+          "config-origin": "configuration/stateMachine",
+          "config-bucket-prefix": "commandHandler"
+        }
+      },
+      "command-validator": {
+        "json-schema-config": {
+          "config-origin": "configuration/JSON/JSONSCHEMA",
+          "config-bucket-prefix": "commandValidator"
+        },
+        "command-api-map-config": {
+          "config-origin": "swagger/commands/v1/",
+          "config-bucket-prefix": "commandValidator/command-api-map"
+        }
+      },
+      "query-handler": {
+        "db_projection_credential_secret_name": "product_projection_application_user",
+        "region": "eu-central-1"
+      },
+      "projection": {
+        "db_projection_credential_secret_name": "product_projection_application_user",
+        "region": "eu-central-1"
+      },
+      "query_handlers": [
+        {
+          "lambda_name": "network",
+          "paths": [
+            "/v1/network/setup",
+            "/v1/network/unhealthy"
+          ]
+        },
+        {
+          "lambda_name": "time",
+          "paths": [
+            "/v1/utils/get_time"
+          ]
+        },
+        {
+          "lambda_name": "parcel",
+          "paths": [
+            "/v1/parcel/{parcel_id}/status",
+            "/v1/parcel/{parcel_id}/track",
+            "/v1/parcel/{parcel_id}/details",
+            "/v1/parcel/{parcel_id}/location"
+          ]
+        },
+        {
+          "lambda_name": "fleet",
+          "paths": [
+            "/v1/fleet/vehicle/{vehicle_id}/parcels"
+          ]
+        },
+        {
+          "lambda_name": "facility",
+          "paths": [
+            "/v1/facility/{facility_id}/short_stats",
+            "/v1/facility/{facility_id}/parcels/details",
+            "/v1/facility/{facility_id}/parcels/stats",
+            "/v1/facility/{facility_id}/sorting_machine/details",
+            "/v1/facility/{facility_id}/sorting_machines/stats",
+            "/v1/facility/{facility_id}/vehicles/stats",
+            "/v1/facility/{facility_id}/vehicles/details"
+          ]
+        },
+        {
+          "lambda_name": "logistic",
+          "paths": [
+            "/v1/logistic/parcels/processing",
+            "/v1/logistic/parcels/SLA"
+          ]
+        }
+      ],
+      "projections": [
+        {
+          "name": "parcel_processing_projection",
+          "filters": [
+            "Accepted",
+            "DeliveryCompleted",
+            "ParcelLoaded",
+            "ParcelUnloaded",
+            "TransportStarted",
+            "TransportEnded",
+            "ParcelProcessed",
+            "ParcelProcessingFailed"
+          ]
+        },
+        {
+          "name": "parcel_sla_projection",
+          "filters": [
+            "Accepted",
+            "DeliveryCompleted"
+          ]
+        },
+        {
+          "name": "fleet_processing_projection",
+          "filters": [
+            "ParcelLoaded",
+            "ParcelUnloaded",
+            "TransportStarted",
+            "TransportEnded",
+            "PositionUpdated"
+          ]
+        },
+        {
+          "name": "facility_parcel_projection",
+          "filters": [
+            "ParcelUnloaded",
+            "ParcelProcessed",
+            "ParcelProcessingFailed",
+            "TransportStarted"
+          ]
+        },
+        {
+          "name": "facility_vehicle_projection",
+          "filters": [
+            "TransportEnded",
+            "ParcelLoaded",
+            "ParcelUnloaded",
+            "TransportStarted"
+          ]
+        },
+        {
+          "name": "facility_parcel_expected_projection",
+          "filters": [
+            "TransportStarted",
+            "TransportEnded"
+          ]
+        },
+        {
+          "name": "facility_sorting_machine_projection",
+          "filters": [
+            "ParcelProcessed",
+            "ParcelProcessingFailed"
+          ]
+        },
+        {
+          "name": "simulation_time_projection",
+          "filters": [
+            "Accepted",
+            "DeliveryCompleted",
+            "ParcelLoaded",
+            "ParcelUnloaded",
+            "TransportStarted",
+            "TransportEnded",
+            "ParcelProcessed",
+            "ParcelProcessingFailed"
+          ]
+        }
+      ],
+      "resources-tags": [
+        {
+          "key": "Logistic Backbone Project Tag 1",
+          "value": "A-0123456789"
+        },
+        {
+          "key": "Logistic Backbone Project tag 2",
+          "value": "B-0123456789"
+        }
+      ],
+      "tags": {
+        "app": "LogisticBackbone",
+        "env": "dev"
+      }
+    },
+    "test": {
+      "vpc": {
+        "enabled": false,
+        "vpce_id": "vpce-031e4e5e26d0113da",
+        "lambda": {
+          "enable": false,
+          "id": "vpc-0f67f286e6453db99",
+          "availability_zones": [
+            "eu-central-1a",
+            "eu-central-1b",
+            "eu-central-1c"
+          ],
+          "private_subnet_ids": [
+            "subnet-09da5d6ff318dd590",
+            "subnet-07541fa784ae98871",
+            "subnet-09e7a02a8ddf8e0d9"
+          ],
+          "private_subnet_route_table_ids": [
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85"
+          ],
+          "security_groups": [
+            "sg-008315a3c21198514"
+          ]
+        },
+        "services": {
+          "enable": false,
+          "id": "vpc-0f67f286e6453db99",
+          "availability_zones": [
+            "eu-central-1a",
+            "eu-central-1b",
+            "eu-central-1c"
+          ],
+          "private_subnet_ids": [
+            "subnet-09da5d6ff318dd590",
+            "subnet-07541fa784ae98871",
+            "subnet-09e7a02a8ddf8e0d9"
+          ],
+          "private_subnet_route_table_ids": [
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85",
+            "rtb-087082f767b7d4c85"
+          ],
+          "security_groups": [
+            "sg-0f5e2581fbc0886ee"
+          ]
+        }
+      },
+      "api-stage": "dev",
+      "api": {
+        "api-key": {
+          "id": "b98ndp5333",
+          "name": "logistic-api-key",
+          "enabled": true,
+          "value": "21Sy27CMBD8Fu6OSYvEudDXoSClQHuNlmQbXBw7zTpFUZR"
+        },
+        "certificate-arn": "arn:aws:acm:eu-central-1:065537138232:certificate/55565d98-fede-4c87-80bd-28070359135a",
+        "custom-domain": {
+          "enabled": false,
+          "domain-name": "logistic-backbone.com",
+          "route53-hosted-zone": "logistic-backbone.com"
+        },
+        "access-logs-enabled": false,
+        "publish-swagger": false
+      },
+      "bucket-removal-policy": "DESTROY",
+      "dynamodb": {
+        "removal-policy": "DESTROY",
+        "billing-mode": "PAY_PER_REQUEST",
+        "stream-specification": "NEW_AND_OLD_IMAGES"
+      },
+      "lambda": {
+        "build-image": "golang:1.19"
+      },
+      "command-handler": {
+        "idempotency-check-source": "true",
+        "version": 1.78,
+        "state-machine-config": {
+          "config-origin": "services/product/commandhandler/configs",
+          "config-bucket-prefix": "product/commandHandler"
+        }
+      },
+      "command-validator": {
+        "json-schema-config": {
+          "config-origin": "configuration/JSON/JSONSCHEMA",
+          "config-bucket-prefix": "product/commandValidator"
+        },
+        "command-api-map-config": {
+          "config-origin": "swagger/commands/v1/",
+          "config-bucket-prefix": "product/commandValidator/command-api-map"
+        }
+      },
+      "query-handler": {
+        "db_projection_credential_secret_name": "product_projection_application_user",
+        "region": "eu-central-1"
+      },
+      "projection": {
+        "db_projection_credential_secret_name": "product_projection_application_user",
+        "region": "eu-central-1"
+      },
+      "resources-tags": [
+        {
+          "key": "Test - Logistic Backbone Project Tag 1",
+          "value": "A-0123456789"
+        },
+        {
+          "key": "Test - Logistic Backbone Project tag 2",
+          "value": "B-0123456789"
+        }
+      ],
+      "tags": {
+        "app": "LogisticBackbone",
+        "env": "test"
+      }
+    }
+  }
+}

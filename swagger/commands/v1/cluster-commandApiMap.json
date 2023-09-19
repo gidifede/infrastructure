@@ -1,0 +1,8 @@
+{
+  "create": "Create",
+  "add_product": "AddProduct",
+  "close": "Close",
+  "end_transport": "EndTransport",
+  "open": "Open",
+  "start_transport": "StartTransport"
+}

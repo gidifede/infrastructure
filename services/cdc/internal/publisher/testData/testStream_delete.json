@@ -1,0 +1,52 @@
+{
+    "Records": [
+        {
+            "eventID": "7de3041dd709b024af6f29e4fa13d34c",
+            "eventName": "REMOVE",
+            "eventVersion": "1.1",
+            "eventSource": "aws:dynamodb",
+            "awsRegion": "region",
+            "dynamodb": {
+                "ApproximateCreationDateTime": 1479499740,
+                "Keys": {
+                    "aggregate_id": {
+                        "S": "4619445400"
+                    },
+                    "timestamp": {
+                        "N": "1683270621006"
+                    }
+                },
+                "NewImage": {
+                    "aggregate_id": {
+                        "S": "4619445400"
+                    },
+                    "timestamp": {
+                        "N": "1683270621006"
+                    },
+                    "data": {
+                        "S": " {\"receiver\": {\"name\": \"Mario Rossi\", \"city\": \"Roma\", \"province\": \"Roma\", \"address\": \"Corso Roma 23\", \"zipcode\": \"00144\", \"number\": \"3333333333\", \"email\": \"mario@rossi.com\", \"note\": \"Carrier's note\", \"attributes\": []}, \"sender\": {\"name\": \"Luca Verdi\", \"city\": \"Milano\", \"province\": \"Milano\", \"address\": \"Corso Como 4\", \"zipcode\": \"12345\", \"number\": \"2222222222\", \"attributes\": []}, \"location\": {\"type\": \"UP\", \"city\": \"Roma\", \"address\": \"Viale Europa 190\", \"zipcode\": \"00144\", \"nation\": \"Italia\", \"locationCode\": \"55Y90\", \"attributes\": []}, \"timestamp\": \"2023-05-05T07:10:20.857753Z\", \"product\": {\"id\": \"4619445400\", \"name\": \"Poste Delivery Business\", \"type\": \"BOX\", \"attributes\": []}, \"attributes\": []}"
+                    },
+                    "dataChecksum": {
+                        "S": "7efdae1dc167cdfa5588575c32aed9e7"
+                    },
+                    "eventId": {
+                        "S": "f624538a-a261-4a0c-83bc-abf13d8ad191"
+                    },
+                    "source": {
+                        "S": "Logistic.PCL.UP.OMP"
+                    },
+                    "timestampSent": {
+                        "N": "1683270620858"
+                    },
+                    "type": {
+                        "S": "Logistic.PCL.Product.Accept.Accepted"
+                    }
+                },
+                "SequenceNumber": "13021600000000001596893679",
+                "SizeBytes": 112,
+                "StreamViewType": "NEW_IMAGE"
+            },
+            "eventSourceARN": "arn:aws:dynamodb:region:123456789012:table/BarkTable/stream/2016-11-16T20:42:48.104"
+        }
+    ]
+}

@@ -1,0 +1,376 @@
+{
+    "config": {
+        "title": "Swagger Logistic backbone Api",
+        "description": "",
+        "version": "1.0.0",
+        "json_schema_refs": [
+            "../configuration/JSON/JSONSCHEMA/common.json"
+        ]
+    },
+    "apis": {
+        "parcel": [
+            {
+                "name": "Sends_the_command_to_accept_the_parcel",
+                "description": "Sends the command to accept the parcel",
+                "path": "/v1/parcel/{parcel_id}/accepted",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Commands/Accepted.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Parcel ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_fail_the_parcel_delivery",
+                "description": "Sends the command to fail the parcel delivery",
+                "path": "/v1/parcel/{parcel_id}/delivery_failed",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Commands/DeliveryFailed.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Parcel ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_make_the_parcel_ready_for_delivery",
+                "description": "Sends the command to make the parcel ready for delivery",
+                "path": "/v1/parcel/{parcel_id}/ready_to_be_delivered",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Commands/ReadyToBeDelivered.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Parcel ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_start_the_parcel_delivery",
+                "description": "Sends the command to start the parcel delivery",
+                "path": "/v1/parcel/{parcel_id}/delivery_started",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Commands/DeliveryStarted.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Parcel ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_complete_the_parcel_delivery",
+                "description": "Sends the command to complete the parcel delivery",
+                "path": "/v1/parcel/{parcel_id}/delivery_completed",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Commands/DeliveryCompleted.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Parcel ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_make_the_parcel_ready_to_be_withdrawn",
+                "description": "Sends the command to make the parcel ready to be withdrawn",
+                "path": "/v1/parcel/{parcel_id}/waiting_to_be_withdrawn",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Commands/WaitingToBeWithdrawn.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Parcel ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_withdraw_the_parcel",
+                "description": "Sends the command to withdraw the parcel",
+                "path": "/v1/parcel/{parcel_id}/withdrawn",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Commands/Withdrawn.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Parcel ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Return_the_status_of_the_parcel",
+                "description": "Return the status of the parcel",
+                "path": "/v1/parcel/{parcel_id}/status",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Numeric ID of the parcel to get"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Queries/ParcelStatusResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Return_the_location_of_the_parcel",
+                "description": "Return the location of the parcel",
+                "path": "/v1/parcel/{parcel_id}/location",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Numeric ID of the parcel to get"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Queries/Location.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Return_the_track_of_the_parcel",
+                "description": "Return the track of the parcel",
+                "path": "/v1/parcel/{parcel_id}/track",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Numeric ID of the parcel to get"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Queries/ParcelTrackListResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Return_the_details_of_the_parcel",
+                "description": "Return the details of the parcel",
+                "path": "/v1/parcel/{parcel_id}/details",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "parcel_id",
+                        "type": "string",
+                        "description": "Numeric ID of the parcel to get"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Parcel/Queries/ParcelDetailsResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            }
+        ]
+    }
+}

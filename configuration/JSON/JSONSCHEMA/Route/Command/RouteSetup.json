@@ -1,0 +1,28 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+    "items":{
+        "type":"object",
+        "properties": {
+            "source_node_id":{
+                "type":"string"
+            },
+            "destination_node_id":{
+                "type":"string"
+            },
+            "cutoff_time":{
+                "type": "object",
+                "properties": {
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "timestamp": {
+                "type": "string",
+                "format": "date-time"
+            }
+        }
+	}
+}

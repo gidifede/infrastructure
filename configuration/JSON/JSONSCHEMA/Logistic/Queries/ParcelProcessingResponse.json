@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "parcel_processing":{
+            "type":"array",
+            "items": {
+                "type":"object",
+                "properties": {
+                    "parcel":{
+                        "type":"integer"
+                    },
+                    "timestamp":{
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            }
+        }
+    }
+}

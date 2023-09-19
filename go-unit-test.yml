@@ -1,0 +1,37 @@
+.go-unit-test:
+  stage: go-test
+  image: golang:1.19
+  variables:
+    GOPRIVATE: gitlab.alm.poste.it
+    GOPROXY: https://nexus.alm.poste.it/repository/go-proxy/
+    UT_WORK_DIR: $CI_PROJECT_DIR
+    UT_TEST_CMD: "go test -v"
+  before_script:
+    - go install github.com/jstemmer/go-junit-report
+    - go install github.com/boumenot/gocover-cobertura@latest
+  script:
+    # Switch to working directory
+    - cd "$UT_WORK_DIR"
+    # Execute Unit tests to get both the junit report and the coverage file
+    - TEST_ERROR=false
+    - ${UT_TEST_CMD} -coverprofile=coverage.out ./... 2>&1 | tee test_report || export TEST_ERROR=true
+    # Convert output to junit
+    - cat test_report | go-junit-report -set-exit-code > report.xml 
+    # Output the coverage to stdout for coverage regex to read
+    - go tool cover -func=coverage.out
+    # Capture coverage in cobertura format for MR highlighting
+    - gocover-cobertura < coverage.out > cobertura.xml
+    # Capture coverage in HTML format for humans
+    - go tool cover -html=coverage.out -o code-coverage.html
+    - if [ "$TEST_ERROR" = true ]; then
+    -   exit 1
+    - fi
+  # Regex below tells gitlab what to capture from job's stdout as a coverage figure
+  coverage: '/total:\s+\(statements\)\s+(\d+.\d+%)/'
+  artifacts:
+    paths:
+      - ${UT_WORK_DIR}/report.xml
+      - ${UT_WORK_DIR}/code-coverage.html
+    when: always
+    reports:
+      junit:  ${UT_WORK_DIR}/report.xml

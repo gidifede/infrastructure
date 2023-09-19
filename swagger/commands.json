@@ -1,0 +1,678 @@
+{
+    "config": {
+        "title": "Logistic Backbone Commands API",
+        "description": "Logistic Backbone Commands API",
+        "version": "1.0.0",
+        "json_schema_refs": [
+            "../configuration/JSON/JSONSCHEMA/common.json"
+        ]
+    },
+    "apis": {
+        "product": [
+            {
+                "name": "Accept",
+                "description": "Sends the command to accept the product",
+                "path": "/product/v1/accept",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/Accept.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "FailDelivery",
+                "description": "Sends the command to fail the product delivery",
+                "path": "/product/v1/fail_delivery",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/FailDelivery.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "MakeReadyToBeDelivered",
+                "description": "Sends the command to make the product ready for delivery",
+                "path": "/product/v1/make_ready_to_be_delivered",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/MakeReadyToBeDelivered.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "FailProcessing",
+                "description": "Sends the command to mark as error product delivery",
+                "path": "/product/v1/fail_processing",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/FailProcessing.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Destroy",
+                "description": "Sends the command to destroy the product",
+                "path": "/product/v1/destroy",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/Destroy.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "StartDelivery",
+                "description": "Sends the command to start the product delivery",
+                "path": "/product/v1/start_delivery",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/StartDelivery.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "StartProcessing",
+                "description": "Sends the command to start the product processing",
+                "path": "/product/v1/start_processing",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/StartProcessing.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "EndProcessing",
+                "description": "Sends the command to end the product processing",
+                "path": "/product/v1/end_processing",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/EndProcessing.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "CompleteDelivery",
+                "description": "Sends the command to complete the product delivery",
+                "path": "/product/v1/complete_delivery",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/CompleteDelivery.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "MakeWaitingToBeWithdrawn",
+                "description": "Sends the command to make the product ready to be withdrawn",
+                "path": "/product/v1/make_waiting_to_be_withdrawn",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/MakeWaitingToBeWithdrawn.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Withdraw",
+                "description": "Sends the command to withdraw the product",
+                "path": "/product/v1/withdraw",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/Withdraw.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "StartTransport",
+                "description": "Sends the command to start the product transport",
+                "path": "/product/v1/start_transport",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/StartTransport.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "EndTransport",
+                "description": "Sends the command to end the product transport",
+                "path": "/product/v1/end_transport",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Product/Commands/EndTransport.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            }
+        ],
+        "cluster": [
+            {
+                "name": "Create",
+                "description": "Command to create a cluster",
+                "path": "/cluster/v1/create",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Cluster/Commands/Create.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "AddProduct",
+                "description": "Sends the command add product",
+                "path": "/cluster/v1/add_product",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Cluster/Commands/AddProduct.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Close",
+                "description": "Sends the command close",
+                "path": "/cluster/v1/close",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Cluster/Commands/Close.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "EndTransport",
+                "description": "Sends the command end transport",
+                "path": "/cluster/v1/end_transport",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Cluster/Commands/EndTransport.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Open",
+                "description": "Sends the command open",
+                "path": "/cluster/v1/open",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Cluster/Commands/Open.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "StartTransport",
+                "description": "Sends the command to start transport",
+                "path": "/cluster/v1/start_transport",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Cluster/Commands/StartTransport.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            }
+        ],
+        "transport": [
+            {
+                "name": "AddProductToTransport",
+                "description": "Sends the command to add the product to the transport",
+                "path": "/transport/v1/add_product_to_transport",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Transport/Commands/AddProductToTransport.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "StartTransport",
+                "description": "Sends the command to start the transport",
+                "path": "/transport/v1/start_transport",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Transport/Commands/StartTransport.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "EndTransport",
+                "description": "Sends the command to end the transport",
+                "path": "/transport/v1/end_transport",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Transport/Commands/EndTransport.json",
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            }
+        ]
+    }
+}

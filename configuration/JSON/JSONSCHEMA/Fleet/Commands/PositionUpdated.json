@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"vehicle_license_plate": {
+			"type": "string"
+		},
+		"latitude": {
+			"type": "number"
+		},
+		"longitute": {
+			"type": "number"
+		},
+		"timestamp": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"required": [
+		"latitude",
+		"longitute",
+		"timestamp",
+		"vehicle_license_plate"
+	]
+}

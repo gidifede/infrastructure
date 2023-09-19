@@ -1,0 +1,49 @@
+{
+    "config": {
+        "title": "Swagger Logistic backbone  API",
+        "description": "",
+        "version": "1.0.0",
+        "json_schema_refs": [
+            "../configuration/JSON/JSONSCHEMA/common.json"
+        ]
+    },
+    "apis": {
+        "logistic": [
+            {
+                "name": "Retrieve_data_logistic_parcels_in_progress",
+                "description": "Retrieve data logistic parcels in progress",
+                "path": "/v1/logistic/parcels/processing",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [],
+                "responses": [
+                    {
+                        "in": "path",
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Logistic/Queries/ParcelProcessingResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_logistic_parcels_SLA",
+                "description": "Retrieve logistic parcels SLA",
+                "path": "/v1/logistic/parcels/SLA",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Logistic/Queries/ParcelsSLAResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            }
+        ]
+    }
+}

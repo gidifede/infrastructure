@@ -1,0 +1,5 @@
+{
+    "/myapi/v1/aggregate/first_api": "MyCommand",
+    "/myapi/v1/aggregate/second_api": "My_First_Command",
+    "/myapi/v1/aggregate/third_api": "My-Command-Snake"
+}

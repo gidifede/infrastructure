@@ -1,0 +1,42 @@
+# Run trivy on local dependencies
+dependency-scan:
+  stage: security
+  allow_failure: true
+  image:
+    name: ${CI_REGISTRY_SVILUPPO_AKS}/alm/ci-alpine:3.11
+  variables:
+    TRIVY_SEVERITY: "LOW,MEDIUM,HIGH,CRITICAL"
+    TRIVY_EXIT_ON_SEVERITY: "HIGH,CRITICAL"
+    TRIVY_EXIT_CODE: 0
+    TRIVY_VULN_TYPE: "library"
+    TRIVY_NO_PROGRESS: "false"
+    TRIVY_OUTPUT: "report.xml"
+    TRIVY_IGNOREFILE: .trivyignore
+    TRIVY_CACHE_DIR: .trivycache/
+    TRIVY_FORMAT: "template"
+    TRIVY_TEMPLATE_DIRECTORY: "/contrib"
+    TEMPLATE_NAME: "junit.tpl"
+    TRIVY_CLEAR_CACHE: "false"
+    TRIVY_IGNORE_UNFIXED: "false"
+    TRIVY_DEBUG: "false"
+    TRIVY_OPTIONS: ""
+
+    TRIVY_VERSION: ""
+    TRIVY_REMOTE: ""
+    TRIVY_SKIP_UPDATE: "false"
+    IMAGE_TAG: ""
+
+  script:
+    # Build report
+    - trivy fs --template "@/tmp/trivy-junit.tpl" --cache-dir ${TRIVY_CACHE_DIR} --output ${TRIVY_OUTPUT} ${TRIVY_OPTIONS} ./
+    # Fail on severe vulnerabilities
+    - trivy fs --exit-code 1 --template "@/tmp/trivy-junit.tpl" --cache-dir ${TRIVY_CACHE_DIR} --severity ${TRIVY_EXIT_ON_SEVERITY} --output failed.${TRIVY_OUTPUT} ${TRIVY_OPTIONS} ./
+  cache:
+    paths:
+      - ${TRIVY_CACHE_DIR}
+  artifacts:
+    paths:
+      - ${TRIVY_OUTPUT}
+    when: always
+    reports:
+      junit: ${TRIVY_OUTPUT}

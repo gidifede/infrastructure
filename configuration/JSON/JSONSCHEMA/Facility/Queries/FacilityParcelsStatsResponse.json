@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "capacity": {
+            "type": "integer"
+        },
+        "parcel_waiting": {
+            "type": "integer"
+        },
+        "parcel_processed": {
+            "type": "integer"
+        },
+        "avg_time_processing": {
+            "type": "number"
+        }
+    }
+}

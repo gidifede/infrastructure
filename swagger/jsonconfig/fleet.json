@@ -1,0 +1,259 @@
+{
+    "config": {
+        "title": "Swagger Logistic backbone Api",
+        "description": "",
+        "version": "1.0.0",
+        "json_schema_refs": [
+            "../configuration/JSON/JSONSCHEMA/common.json"
+        ]
+    },
+    "apis": {
+        "fleet": [
+            {
+                "name": "Sends_the_command_to_add_the_parcel_to_the_vehicle",
+                "description": "Sends the command to add the parcel to the vehicle",
+                "path": "/v1/fleet/{vehicle_license_plate}/parcel_loaded",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Fleet/Commands/ParcelLoaded.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "vehicle_license_plate",
+                        "type": "string",
+                        "description": "Vehicle ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_unload_the_parcel_from_the_vehicle",
+                "description": "Sends the command to unload the parcel from the vehicle",
+                "path": "/v1/fleet/{vehicle_license_plate}/parcel_unloaded",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Fleet/Commands/ParcelUnloaded.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "vehicle_license_plate",
+                        "type": "string",
+                        "description": "Vehicle ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_start_the_transport",
+                "description": "Sends the command to start the transport",
+                "path": "/v1/fleet/{vehicle_license_plate}/transport_started",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Fleet/Commands/TransportStarted.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "vehicle_license_plate",
+                        "type": "string",
+                        "description": "Vehicle ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_command_to_end_the_transport",
+                "description": "Sends the command to end the transport",
+                "path": "/v1/fleet/{vehicle_license_plate}/transport_ended",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Fleet/Commands/TransportEnded.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "vehicle_license_plate",
+                        "type": "string",
+                        "description": "Vehicle ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Upload_vehicles",
+                "description": "Returns the details of a vehicle",
+                "path": "/v1/fleet/setup",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Fleet/Commands/TransportSetup.json",
+                "parameters": [],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Sends_the_the_vehicle_position_during_the_transport",
+                "description": "Sends the the vehicle position during the transport",
+                "path": "/v1/fleet/vehicle/{vehicle_license_plate}/position_updated",
+                "method": "post",
+                "json_schema_location": "../configuration/JSON/JSONSCHEMA/Fleet/Commands/PositionUpdated.json",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "vehicle_license_plate",
+                        "type": "string",
+                        "description": "Vehicle ID"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "202",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command accepted"
+                    },
+                    {
+                        "code": "400",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command not validated"
+                    },
+                    {
+                        "code": "500",
+                        "content_type": "text/plain",
+                        "content_json_schema_location": null,
+                        "content_schema_type": "string",
+                        "description": "Command error"
+                    }
+                ]
+            },
+            {
+                "name": "Retrieve_parcels_list_loaded_on_specific_vehicles",
+                "description": "Retrieve parcels list loaded on specific vehicles",
+                "path": "/v1/fleet/vehicle/{vehicle_license_plate}/parcels",
+                "method": "get",
+                "json_schema_location": null,
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "vehicle_license_plate",
+                        "type": "string",
+                        "description": "Facility identify"
+                    }
+                ],
+                "responses": [
+                    {
+                        "code": "200",
+                        "content_type": "application/json",
+                        "content_json_schema_location": "../configuration/JSON/JSONSCHEMA/Fleet/Queries/VehicleParcelResponse.json",
+                        "content_schema_type": null,
+                        "description": "Successful operation"
+                    }
+                ]
+            }
+        ]
+    }
+}

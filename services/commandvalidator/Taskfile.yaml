@@ -1,0 +1,48 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  APP_NAME: commandvalidator
+  LAMBDA_NAME: LogisticBackbone-CommandValidator
+  LAMBDA_HANDLER: commandValidator
+  ZIP_NAME: command-validator.zip
+  ARN_ROLE: arn:aws:iam::810417419632:role/Maintainer
+  REGION: eu-central-1
+  PROFILE: aws-poste
+  VERSION: 1.0.0
+
+
+tasks:
+  build:
+    cmds:
+      - GOOS=linux GOARCH=amd64 go build -o "{{.APP_NAME}}" ./cmd/main.go
+  zip-linux:
+    cmds:
+      - zip "{{.ZIP_NAME}}" "{{.APP_NAME}}"
+  zip-win:
+    cmds:
+      - build-lambda-zip -o "{{.ZIP_NAME}}" "{{.APP_NAME}}"
+  create-deploy:
+    cmds:
+      - aws lambda create-function --function-name "{{.LAMBDA_NAME}}" --region "{{.REGION}}" --runtime go1.x --role "{{.ARN_ROLE}}" --handler "{{.LAMBDA_HANDLER}}" --zip-file fileb://"{{.ZIP_NAME}}"
+  update-deploy:
+    cmds:
+      - aws lambda update-function-code --function-name "{{.LAMBDA_NAME}}" --zip-file fileb://"{{.ZIP_NAME}}" --profile "{{.PROFILE}}"
+  # update-version:
+  #   cmds:
+  #     - aws lambda publish-version --function-name "{{.LAMBDA_NAME}}"
+  # update-test-structures:
+  #   cmds:
+  #     - go install github.com/atombender/go-jsonschema/cmd/gojsonschema@latest
+  #     - for f in $(find ./configs/v1 -name '*.json' ! -name '*common.json'); 
+  #       do 
+  #       base_name=$(basename ${f}); out_file=${base_name/json/go}; out_file_lower=${out_file,,};
+  #       package=${out_file_lower/.go/};
+  #       echo "change the reference to point to phisical file to build go structures";
+  #       mkdir -p teststructs/${package};
+  #       sed -i 's/https:\/\/example\.com\/schemas\/common/\.\.\/\.\.\/\.\.\/\.\.\/common\.json/g' ${f};
+  #       gojsonschema --schema-package=https://example.com/schemas/common=commandvalidator/teststructs/${package} --schema-output=https://example.com/schemas/common=teststructs/${package}/common.go --schema-package=https://example.com/schemas/${package}=commandvalidator/teststructs/${package} --schema-output=https://example.com/schemas/${package}=teststructs/${package}/${package}.go ./configs/v1/JSONSCHEMA/common.json ${f};
+  #       echo "revert the reference to use the right ref";
+  #       sed -i 's/\.\.\/\.\.\/\.\.\/\.\.\/common\.json/https:\/\/example\.com\/schemas\/common/g' ${f};
+  #       done

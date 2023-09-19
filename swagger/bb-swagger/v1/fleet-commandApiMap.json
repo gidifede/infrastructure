@@ -1,0 +1,8 @@
+{
+  "add_parcel_to_vehicle": "AddParcelToVehicle",
+  "start_transport": "StartTransport",
+  "end_transport": "EndTransport",
+  "parking_arrived": "ParkingArrived",
+  "parking_left": "ParkingLeft",
+  "setup": "TransportSetup"
+}

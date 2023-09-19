@@ -1,0 +1,29 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"parcel_id": {
+			"type": "string"
+		},
+		"vehicle_license_plate": {
+			"type": "string"
+		},
+		"facility_id": {
+			"type": "string"
+		},
+		"transport_id": {
+			"type": "string"
+		},
+		"timestamp": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"required": [
+		"facility_id",
+		"parcel_id",
+		"vehicle_license_plate",
+		"transport_id",
+		"timestamp"
+	]
+}

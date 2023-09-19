@@ -1,0 +1,765 @@
+{
+  "info": {
+    "description": "Logistic Backbone Queries API",
+    "title": "Logistic Backbone Queries API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/query/product/v1/status": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Product ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200ProductStatusResponse"
+                }
+              }
+            },
+            "description": "The product status"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/query/product/v1/track": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Product ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200ProductTrackResponse"
+                }
+              }
+            },
+            "description": "The product status"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/query/product/v1/location": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Product ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200ProductLocationResponse"
+                }
+              }
+            },
+            "description": "The product status"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/query/product/v1/details": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Product ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200ProductDetailsResponse"
+                }
+              }
+            },
+            "description": "The product status"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/query/product/v1/parcel_status": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Product ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200ParcelStatusResponse"
+                }
+              }
+            },
+            "description": "The parcels status"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/query/product/v1/delete_tables": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Product ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200DeleteTableResponse"
+                }
+              }
+            },
+            "description": "deleted tables message"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/query/transport/v1/running_vehicles": {
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Vehicle ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200VehicleDetailsResponse"
+                }
+              }
+            },
+            "description": "The vehicles details"
+          }
+        },
+        "tags": [
+          "Transport"
+        ],
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "openapi": "3.0.2",
+  "components": {
+    "schemas": {
+      "200ProductStatusResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "status": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "product",
+          "status"
+        ]
+      },
+      "200ProductTrackResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          "trackList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "track": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "timestamp": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "timestamp"
+                  ]
+                }
+              },
+              "required": [
+                "track"
+              ]
+            }
+          }
+        },
+        "required": [
+          "product",
+          "trackList"
+        ]
+      },
+      "200ProductLocationResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "type:": {
+                "type": "string",
+                "enum": [
+                  "BOX",
+                  "PHARMA"
+                ]
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "type:",
+              "attributes"
+            ]
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "nation": {
+                "type": "string"
+              },
+              "locationCode": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "type",
+              "address",
+              "zipcode",
+              "city",
+              "nation",
+              "locationCode",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "product",
+          "location"
+        ]
+      },
+      "200ProductDetailsResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "type:": {
+                "type": "string",
+                "enum": [
+                  "BOX",
+                  "PHARMA"
+                ]
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "type:",
+              "attributes"
+            ]
+          },
+          "sender": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "province": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "cap": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "province",
+              "city",
+              "address",
+              "cap",
+              "attributes"
+            ]
+          },
+          "receiver": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "province": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "cap": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "province",
+              "city",
+              "address",
+              "cap",
+              "number",
+              "email",
+              "note",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "product",
+          "sender",
+          "receiver"
+        ]
+      },
+      "200ParcelStatusResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "type:": {
+                "type": "string",
+                "enum": [
+                  "BOX",
+                  "PHARMA"
+                ]
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "type:",
+              "attributes"
+            ]
+          },
+          "sender": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "province": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "cap": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "province",
+              "city",
+              "address",
+              "cap",
+              "attributes"
+            ]
+          },
+          "receiver": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "province": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "cap": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "province",
+              "city",
+              "address",
+              "cap",
+              "number",
+              "email",
+              "note",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "product",
+          "sender",
+          "receiver"
+        ]
+      },
+      "200DeleteTableResponse": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "type:": {
+                "type": "string",
+                "enum": [
+                  "BOX",
+                  "PHARMA"
+                ]
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "id",
+              "type:",
+              "attributes"
+            ]
+          },
+          "sender": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "province": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "cap": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "province",
+              "city",
+              "address",
+              "cap",
+              "attributes"
+            ]
+          },
+          "receiver": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "province": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
+              "cap": {
+                "type": "string"
+              },
+              "number": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "array",
+                "items": {}
+              }
+            },
+            "required": [
+              "name",
+              "province",
+              "city",
+              "address",
+              "cap",
+              "number",
+              "email",
+              "note",
+              "attributes"
+            ]
+          }
+        },
+        "required": [
+          "product",
+          "sender",
+          "receiver"
+        ]
+      },
+      "200VehicleDetailsResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "vehicleId": {
+              "type": "string"
+            },
+            "routeId": {
+              "type": "string"
+            },
+            "currentLoad": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "vehicleId",
+            "routeId",
+            "currentLoad"
+          ]
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    }
+  }
+}

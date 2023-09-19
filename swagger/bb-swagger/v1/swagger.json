@@ -1,0 +1,3042 @@
+{
+  "info": {
+    "description": "",
+    "title": "Swagger Logistic backbone Api",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/v1/product/setup": {
+      "post": {
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Setup_the_logistic_productProductPayload"
+              }
+            }
+          },
+          "description": "Api for add product that logistic can manage"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Product"
+        ],
+        "description": "Api for add product that logistic can manage",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/accepted": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parcel ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_accept_the_parcelParcelPayload"
+              }
+            }
+          },
+          "description": "Sends the command to accept the parcel"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Sends the command to accept the parcel",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/delivery_failed": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parcel ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_fail_the_parcel_deliveryParcelPayload"
+              }
+            }
+          },
+          "description": "Sends the command to fail the parcel delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Sends the command to fail the parcel delivery",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/ready_to_be_delivered": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parcel ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_make_the_parcel_ready_for_deliveryParcelPayload"
+              }
+            }
+          },
+          "description": "Sends the command to make the parcel ready for delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Sends the command to make the parcel ready for delivery",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/delivery_started": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parcel ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_start_the_parcel_deliveryParcelPayload"
+              }
+            }
+          },
+          "description": "Sends the command to start the parcel delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Sends the command to start the parcel delivery",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/delivery_completed": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parcel ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_complete_the_parcel_deliveryParcelPayload"
+              }
+            }
+          },
+          "description": "Sends the command to complete the parcel delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Sends the command to complete the parcel delivery",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/waiting_to_be_withdrawn": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parcel ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_make_the_parcel_ready_to_be_withdrawnParcelPayload"
+              }
+            }
+          },
+          "description": "Sends the command to make the parcel ready to be withdrawn"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Sends the command to make the parcel ready to be withdrawn",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/withdrawn": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Parcel ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_withdraw_the_parcelParcelPayload"
+              }
+            }
+          },
+          "description": "Sends the command to withdraw the parcel"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Sends the command to withdraw the parcel",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/status": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Numeric ID of the parcel to get",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Return_the_status_of_the_parcelResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Return the status of the parcel",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/location": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Numeric ID of the parcel to get",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Return_the_location_of_the_parcelResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Return the location of the parcel",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/track": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Numeric ID of the parcel to get",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Return_the_track_of_the_parcelResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Return the track of the parcel",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/parcel/{parcel_id}/details": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "parcel_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Numeric ID of the parcel to get",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Return_the_details_of_the_parcelResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Parcel"
+        ],
+        "description": "Return the details of the parcel",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/network/setup": {
+      "post": {
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Update_or_Insert_a_logistic_networkNetworkPayload"
+              }
+            }
+          },
+          "description": "Api for load the entire logistic network as a graph structure"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Network"
+        ],
+        "description": "Api for load the entire logistic network as a graph structure",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      },
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_network_informationResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Network"
+        ],
+        "description": "Api for retrieve the entire logistic network as a graph structure",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/network/unhealthy": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200retrieve_information_about_network_healthy_nodeResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Network"
+        ],
+        "description": "Retrieve_information_about_network_healthy_node",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/short_stats": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_information_about_facility_statisticsResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "With facility_id we can retrieve SLA information of all logistic nodes",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/parcels/stats": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_statistics_information_about_facility_parcelsResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Retrieve statistics information about facility parcels",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/parcels/details": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_details_about_parcels_actual_on_processing_in_specific_facilityResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Retrieve details about parcels actual on processing in specific facility",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/vehicles/stats": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_statistics_information_about_vehicles_on_specific_facilityResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Retrieve statistics information about vehicles on specific facility",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/vehicles/details": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_details_information_about_vehicles_on_specific_facilityResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Retrieve information about vehicles on specific facility",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/sorting_machine/details": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_details_information_about_sorting_machine_on_specific_facilityResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Retrieve details information about sorting machine on specific facility",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/sorting_machine/{sorting_machine_id}/parcel": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "sorting_machine_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Sorting Machine identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_information_about_parcels_on_sorting_on_specific_sorting_machineResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Retrieve information about parcels on sorting on specific sorting machine",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/sorting_machines/stats": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_details_about_sorting_machine_in_specific_facilityResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "The information retrieved reguard id, status, parcel/time, next maintenance",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/sorting_machine/{sorting_machine_id}/parcel_processed": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "sorting_machine_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Sorting Machine identify",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Notify_parcel_end_processing_by_sorting_machineFacilitiesPayload"
+              }
+            }
+          },
+          "description": "Notify parcel end processing by sorting machine"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Notify parcel end processing by sorting machine",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/facility/{facility_id}/sorting_machine/{sorting_machine_id}/parcel_processing_failed": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "facility_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "sorting_machine_id",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Sorting Machine identify",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_mark_as_error_parcel_deliveryFacilitiesPayload"
+              }
+            }
+          },
+          "description": "Sends the command to mark as error parcel delivery"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Facilities"
+        ],
+        "description": "Sends the command to mark as error parcel delivery",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/utils/get_time": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Api_for_retrieve_simulation_timeResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Utils"
+        ],
+        "description": "api for retrieve the simulation time",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/logistic/parcels/processing": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_data_logistic_parcels_in_progressResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Logistic"
+        ],
+        "description": "Retrieve data logistic parcels in progress",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/logistic/parcels/SLA": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_logistic_parcels_SLAResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Logistic"
+        ],
+        "description": "Retrieve logistic parcels SLA",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/fleet/{vehicle_license_plate}/parcel_loaded": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vehicle_license_plate",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Vehicle ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_add_the_parcel_to_the_vehicleFleetPayload"
+              }
+            }
+          },
+          "description": "Sends the command to add the parcel to the vehicle"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Fleet"
+        ],
+        "description": "Sends the command to add the parcel to the vehicle",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/fleet/{vehicle_license_plate}/parcel_unloaded": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vehicle_license_plate",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Vehicle ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_unload_the_parcel_from_the_vehicleFleetPayload"
+              }
+            }
+          },
+          "description": "Sends the command to unload the parcel from the vehicle"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Fleet"
+        ],
+        "description": "Sends the command to unload the parcel from the vehicle",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/fleet/{vehicle_license_plate}/transport_started": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vehicle_license_plate",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Vehicle ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_start_the_transportFleetPayload"
+              }
+            }
+          },
+          "description": "Sends the command to start the transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Fleet"
+        ],
+        "description": "Sends the command to start the transport",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/fleet/{vehicle_license_plate}/transport_ended": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vehicle_license_plate",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Vehicle ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_command_to_end_the_transportFleetPayload"
+              }
+            }
+          },
+          "description": "Sends the command to end the transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Fleet"
+        ],
+        "description": "Sends the command to end the transport",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/fleet/setup": {
+      "post": {
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Upload_vehiclesFleetPayload"
+              }
+            }
+          },
+          "description": "Returns the details of a vehicle"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Fleet"
+        ],
+        "description": "Returns the details of a vehicle",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/fleet/vehicle/{vehicle_license_plate}/position_updated": {
+      "post": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vehicle_license_plate",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Vehicle ID",
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Sends_the_the_vehicle_position_during_the_transportFleetPayload"
+              }
+            }
+          },
+          "description": "Sends the the vehicle position during the transport"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Fleet"
+        ],
+        "description": "Sends the the vehicle position during the transport",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/fleet/vehicle/{vehicle_license_plate}/parcels": {
+      "get": {
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vehicle_license_plate",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Facility identify",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/200Retrieve_parcels_list_loaded_on_specific_vehiclesResponse"
+                }
+              }
+            },
+            "description": "Successful operation"
+          }
+        },
+        "tags": [
+          "Fleet"
+        ],
+        "description": "Retrieve parcels list loaded on specific vehicles",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/v1/route/setup": {
+      "post": {
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Setup_Logistic_RouteRoutePayload"
+              }
+            }
+          },
+          "description": "Setup Logistic Route"
+        },
+        "responses": {
+          "202": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command accepted"
+          },
+          "400": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command not validated"
+          },
+          "500": {
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Command error"
+          }
+        },
+        "tags": [
+          "Route"
+        ],
+        "description": "Setup Logistic Route",
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "openapi": "3.0.2",
+  "components": {
+    "schemas": {
+      "parcel": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "id",
+          "type"
+        ]
+      },
+      "product": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "SLA": {
+            "type": "integer"
+          }
+        }
+      },
+      "sender": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "city": {
+            "type": "string"
+          },
+          "nation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "address",
+          "zipcode",
+          "city",
+          "nation"
+        ]
+      },
+      "receiver": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "city": {
+            "type": "string"
+          },
+          "nation": {
+            "type": "string"
+          },
+          "number": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
+        }
+      },
+      "address": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "zipcode": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$"
+          },
+          "city": {
+            "type": "string"
+          },
+          "nation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "zipcode",
+          "city",
+          "nation"
+        ]
+      },
+      "vehicle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "integer"
+          },
+          "license_plate": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "capacity",
+          "license_plate"
+        ]
+      },
+      "sorting_machine": {
+        "type": "object",
+        "properties": {
+          "serial": {
+            "type": "string"
+          },
+          "capacity": {
+            "type": "integer"
+          }
+        }
+      },
+      "Setup_the_logistic_productProductPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Setup_the_logistic_productProduct"
+          }
+        }
+      },
+      "Setup_the_logistic_productProduct": {
+        "type": "object",
+        "properties": {
+          "product": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "SLA": {
+                "type": "integer"
+              }
+            }
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "location",
+          "connectTo",
+          "timestamp"
+        ]
+      },
+      "Sends_the_command_to_accept_the_parcelParcelPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_accept_the_parcelParcel"
+          }
+        }
+      },
+      "Sends_the_command_to_accept_the_parcelParcel": {
+        "type": "object",
+        "properties": {
+          "parcel": {
+            "$ref": "#/components/schemas/parcel"
+          },
+          "facility_id": {
+            "type": "string"
+          },
+          "sender": {
+            "$ref": "#/components/schemas/sender"
+          },
+          "receiver": {
+            "$ref": "#/components/schemas/receiver"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "parcel",
+          "facility_id",
+          "sender",
+          "receiver",
+          "timestamp"
+        ]
+      },
+      "Sends_the_command_to_fail_the_parcel_deliveryParcelPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_fail_the_parcel_deliveryParcel"
+          }
+        }
+      },
+      "Sends_the_command_to_fail_the_parcel_deliveryParcel": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "err_msg": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "timestamp",
+          "err_msg",
+          "parcel_id"
+        ]
+      },
+      "Sends_the_command_to_make_the_parcel_ready_for_deliveryParcelPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_make_the_parcel_ready_for_deliveryParcel"
+          }
+        }
+      },
+      "Sends_the_command_to_make_the_parcel_ready_for_deliveryParcel": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "timestamp",
+          "parcel_id"
+        ]
+      },
+      "Sends_the_command_to_start_the_parcel_deliveryParcelPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_start_the_parcel_deliveryParcel"
+          }
+        }
+      },
+      "Sends_the_command_to_start_the_parcel_deliveryParcel": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "timestamp",
+          "parcel_id"
+        ]
+      },
+      "Sends_the_command_to_complete_the_parcel_deliveryParcelPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_complete_the_parcel_deliveryParcel"
+          }
+        }
+      },
+      "Sends_the_command_to_complete_the_parcel_deliveryParcel": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "timestamp",
+          "parcel_id"
+        ]
+      },
+      "Sends_the_command_to_make_the_parcel_ready_to_be_withdrawnParcelPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_make_the_parcel_ready_to_be_withdrawnParcel"
+          }
+        }
+      },
+      "Sends_the_command_to_make_the_parcel_ready_to_be_withdrawnParcel": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "timestamp",
+          "parcel_id"
+        ]
+      },
+      "Sends_the_command_to_withdraw_the_parcelParcelPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_withdraw_the_parcelParcel"
+          }
+        }
+      },
+      "Sends_the_command_to_withdraw_the_parcelParcel": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "notes",
+          "timestamp",
+          "parcel_id"
+        ]
+      },
+      "200Return_the_status_of_the_parcelResponse": {
+        "type": "object",
+        "properties": {
+          "parcel": {
+            "$ref": "#/components/schemas/parcel"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "200Return_the_location_of_the_parcelResponse": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "location_type": {
+                "type": "string"
+              },
+              "location_id": {
+                "type": "string"
+              },
+              "coordinates": {
+                "type": "object",
+                "properties": {
+                  "lat": {
+                    "type": "number"
+                  },
+                  "long": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200Return_the_track_of_the_parcelResponse": {
+        "type": "object",
+        "properties": {
+          "parcel": {
+            "$ref": "#/components/schemas/parcel"
+          },
+          "status_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200Return_the_details_of_the_parcelResponse": {
+        "type": "object",
+        "properties": {
+          "parcel": {
+            "$ref": "#/components/schemas/parcel"
+          }
+        }
+      },
+      "Update_or_Insert_a_logistic_networkNetworkPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Update_or_Insert_a_logistic_networkNetwork"
+          }
+        }
+      },
+      "Update_or_Insert_a_logistic_networkNetwork": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "node": {
+              "type": "object",
+              "properties": {
+                "node_id": {
+                  "type": "string"
+                },
+                "node_type": {
+                  "type": "string"
+                },
+                "node_company": {
+                  "type": "string"
+                },
+                "node_location": {
+                  "$ref": "#/components/schemas/address"
+                },
+                "coordinates": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "number"
+                    },
+                    "long": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "connect_to": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "node_Id": {
+                    "type": "string"
+                  },
+                  "distance": {
+                    "type": "integer"
+                  }
+                }
+              }
+            },
+            "sorting_machines": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/sorting_machine"
+              }
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "200Retrieve_network_informationResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "node": {
+              "type": "object",
+              "properties": {
+                "node_id": {
+                  "type": "string"
+                },
+                "node_type": {
+                  "type": "string"
+                },
+                "node_company": {
+                  "type": "string"
+                },
+                "node_location": {
+                  "$ref": "#/components/schemas/address"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "coordinates": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "number"
+                    },
+                    "long": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "200retrieve_information_about_network_healthy_nodeResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "node": {
+              "type": "object",
+              "properties": {
+                "node_id": {
+                  "type": "string"
+                },
+                "node_type": {
+                  "type": "string"
+                },
+                "node_company": {
+                  "type": "string"
+                },
+                "node_location": {
+                  "$ref": "#/components/schemas/address"
+                },
+                "coordinates": {
+                  "type": "object",
+                  "properties": {
+                    "lat": {
+                      "type": "number"
+                    },
+                    "long": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "200Retrieve_information_about_facility_statisticsResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "parcel_waiting": {
+            "type": "integer"
+          },
+          "parcel_processed": {
+            "type": "integer"
+          },
+          "next_cutoff_time": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "200Retrieve_statistics_information_about_facility_parcelsResponse": {
+        "type": "object",
+        "properties": {
+          "capacity": {
+            "type": "integer"
+          },
+          "parcel_waiting": {
+            "type": "integer"
+          },
+          "parcel_processed": {
+            "type": "integer"
+          },
+          "avg_time_processing": {
+            "type": "number"
+          }
+        }
+      },
+      "200Retrieve_details_about_parcels_actual_on_processing_in_specific_facilityResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "parcel_id": {
+              "type": "string"
+            },
+            "time_in": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "time_out": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "next_hop": {
+              "type": "string"
+            },
+            "destination": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "200Retrieve_statistics_information_about_vehicles_on_specific_facilityResponse": {
+        "type": "object",
+        "properties": {
+          "vehicles_unloading": {
+            "type": "integer"
+          },
+          "vehicles_loading": {
+            "type": "integer"
+          }
+        }
+      },
+      "200Retrieve_details_information_about_vehicles_on_specific_facilityResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "vehicle_licence_plate": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "arrived_time": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "next_start_time": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "200Retrieve_details_information_about_sorting_machine_on_specific_facilityResponse": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "sorting_machine_id": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "parcel_per_hour": {
+              "type": "integer"
+            },
+            "next_maintenance": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "200Retrieve_information_about_parcels_on_sorting_on_specific_sorting_machineResponse": {
+        "type": "object",
+        "properties": {
+          "sorting_machine_id": {
+            "type": "string"
+          },
+          "parcel_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "parcel_id": {
+                  "type": "string"
+                },
+                "departure_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "estimated_arrived_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "next_hop": {
+                  "type": "string"
+                },
+                "destination": {
+                  "type": "string"
+                },
+                "target": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "estimated_delivery_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "hub_time": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200Retrieve_details_about_sorting_machine_in_specific_facilityResponse": {
+        "type": "object",
+        "properties": {
+          "capacity": {
+            "type": "number"
+          },
+          "parcel_processed": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "day": {
+                  "type": "string"
+                },
+                "hour": {
+                  "type": "string"
+                },
+                "parcels": {
+                  "type": "integer"
+                }
+              }
+            }
+          },
+          "working_capacity_average": {
+            "type": "number"
+          },
+          "next_maintenance": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Notify_parcel_end_processing_by_sorting_machineFacilitiesPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Notify_parcel_end_processing_by_sorting_machineFacilities"
+          }
+        }
+      },
+      "Notify_parcel_end_processing_by_sorting_machineFacilities": {
+        "type": "object",
+        "properties": {
+          "facility_id": {
+            "type": "string"
+          },
+          "sorting_machine_id": {
+            "type": "string"
+          },
+          "parcel_id": {
+            "type": "string"
+          },
+          "destination_facility_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "parcel_id",
+          "facility_id",
+          "sorting_machine_id",
+          "destination_facility_id",
+          "timestamp"
+        ]
+      },
+      "Sends_the_command_to_mark_as_error_parcel_deliveryFacilitiesPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_mark_as_error_parcel_deliveryFacilities"
+          }
+        }
+      },
+      "Sends_the_command_to_mark_as_error_parcel_deliveryFacilities": {
+        "type": "object",
+        "properties": {
+          "facility_id": {
+            "type": "string"
+          },
+          "sorting_machine_id": {
+            "type": "string"
+          },
+          "parcel_id": {
+            "type": "string"
+          },
+          "err_msg": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "parcel_id",
+          "err_msg",
+          "timestamp",
+          "sorting_machine_id",
+          "facility_id"
+        ]
+      },
+      "200Api_for_retrieve_simulation_timeResponse": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "timestamp"
+        ]
+      },
+      "200Retrieve_data_logistic_parcels_in_progressResponse": {
+        "type": "object",
+        "properties": {
+          "parcel_processing": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "parcel": {
+                  "type": "integer"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200Retrieve_logistic_parcels_SLAResponse": {
+        "type": "object",
+        "properties": {
+          "parcel_in_sla": {
+            "type": "integer"
+          },
+          "parcel_out_sla": {
+            "type": "integer"
+          }
+        }
+      },
+      "Sends_the_command_to_add_the_parcel_to_the_vehicleFleetPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_add_the_parcel_to_the_vehicleFleet"
+          }
+        }
+      },
+      "Sends_the_command_to_add_the_parcel_to_the_vehicleFleet": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "vehicle_license_plate": {
+            "type": "string"
+          },
+          "facility_id": {
+            "type": "string"
+          },
+          "transport_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "parcel_id",
+          "vehicle_license_plate",
+          "facility_id",
+          "transport_id",
+          "timestamp"
+        ]
+      },
+      "Sends_the_command_to_unload_the_parcel_from_the_vehicleFleetPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_unload_the_parcel_from_the_vehicleFleet"
+          }
+        }
+      },
+      "Sends_the_command_to_unload_the_parcel_from_the_vehicleFleet": {
+        "type": "object",
+        "properties": {
+          "parcel_id": {
+            "type": "string"
+          },
+          "vehicle_license_plate": {
+            "type": "string"
+          },
+          "facility_id": {
+            "type": "string"
+          },
+          "transport_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "facility_id",
+          "parcel_id",
+          "vehicle_license_plate",
+          "transport_id",
+          "timestamp"
+        ]
+      },
+      "Sends_the_command_to_start_the_transportFleetPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_start_the_transportFleet"
+          }
+        }
+      },
+      "Sends_the_command_to_start_the_transportFleet": {
+        "type": "object",
+        "properties": {
+          "vehicle_license_plate": {
+            "type": "string"
+          },
+          "source_facility_id": {
+            "type": "string"
+          },
+          "destination_facility_id": {
+            "type": "string"
+          },
+          "transport_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "source_facility_id",
+          "destination_facility_id",
+          "vehicle_license_plate",
+          "transport_id",
+          "timestamp"
+        ]
+      },
+      "Sends_the_command_to_end_the_transportFleetPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_command_to_end_the_transportFleet"
+          }
+        }
+      },
+      "Sends_the_command_to_end_the_transportFleet": {
+        "type": "object",
+        "properties": {
+          "vehicle_license_plate": {
+            "type": "string"
+          },
+          "facility_id": {
+            "type": "string"
+          },
+          "transport_id": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "facility_id",
+          "vehicle_license_plate",
+          "transport_id",
+          "timestamp"
+        ]
+      },
+      "Upload_vehiclesFleetPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Upload_vehiclesFleet"
+          }
+        }
+      },
+      "Upload_vehiclesFleet": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "vehicles": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/vehicle"
+              },
+              "properties": {
+                "facility_id": {
+                  "type": "string"
+                }
+              }
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      },
+      "Sends_the_the_vehicle_position_during_the_transportFleetPayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Sends_the_the_vehicle_position_during_the_transportFleet"
+          }
+        }
+      },
+      "Sends_the_the_vehicle_position_during_the_transportFleet": {
+        "type": "object",
+        "properties": {
+          "vehicle_license_plate": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number"
+          },
+          "longitute": {
+            "type": "number"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "latitude",
+          "longitute",
+          "timestamp",
+          "vehicle_license_plate"
+        ]
+      },
+      "200Retrieve_parcels_list_loaded_on_specific_vehiclesResponse": {
+        "type": "object",
+        "properties": {
+          "vehicle_id": {
+            "type": "string"
+          },
+          "parcel_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "destination_arriving_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "destination": {
+                  "$ref": "#/components/schemas/address"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Setup_Logistic_RouteRoutePayload": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.1/spec.json"
+          }
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Setup_Logistic_RouteRoute"
+          }
+        }
+      },
+      "Setup_Logistic_RouteRoute": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "source_node_id": {
+              "type": "string"
+            },
+            "destination_node_id": {
+              "type": "string"
+            },
+            "cutoff_time": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "x-api-key"
+      }
+    }
+  }
+}

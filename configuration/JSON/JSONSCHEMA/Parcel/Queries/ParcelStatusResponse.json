@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+    "properties": {
+        "parcel":{
+            "$ref": "https://example.com/schemas/common#/Definitions/parcel"
+        },
+        "status":{
+            "type": "string"
+        }
+    }
+}

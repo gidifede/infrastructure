@@ -1,0 +1,10 @@
+{
+    "specversion" : "1.0",
+    "type" : "Logistic.PCL.Product.Accept.Anything",
+    "source" : "Logistic.PCL.UP.OMP",
+    "subject": "Command",
+    "id" : "C234-1234-1234",
+    "time" : "2022-12-14T22:22:00Z",
+    "datacontenttype" : "application/json",
+    "data" : {"Msg": "Hello"}
+}
